@@ -1,0 +1,486 @@
+player_id,name_first,name_last,row_name,player_id_api,hand,dob,ioc,height,slug
+100644,Alexander,Zverev,Alexander Zverev,57163,R,19970420,GER,198,zverev-alexander
+104527,Stan,Wawrinka,Stan Wawrinka,14548,R,19850328,SUI,183,wawrinka-stan
+104755,Richard,Gasquet,Richard Gasquet,14414,R,19860618,FRA,183,gasquet-richard
+104792,Gael,Monfils,Gael Monfils,14844,R,19860901,FRA,193,monfils-gael
+104925,Novak,Djokovic,Novak Djokovic,14882,R,19870522,SRB,188,djokovic-novak
+104926,Fabio,Fognini,Fabio Fognini,15434,R,19870524,ITA,178,fognini-fabio
+105062,Mikhail,Kukushkin,Mikhail Kukushkin,16683,R,19871226,KAZ,183,kukushkin-mikhail
+105138,Roberto,Bautista Agut,Roberto Bautista Agut,16720,R,19880414,ESP,183,bautista-agut-roberto
+105173,Adrian,Mannarino,Adrian Mannarino,15894,L,19880629,FRA,180,mannarino-adrian
+105180,Daniel,Dutra Da Silva,Daniel Dutra da Silva,48225,L,19880705,BRA,173,dutra-da-silva-daniel
+105227,Marin,Cilic,Marin Cilic,15387,R,19880928,CRO,198,cilic-marin
+105339,Yan,Bai,Yan Bai,25683,R,19890521,CHN,185,bai-yan
+105373,Martin,Klizan,Martin Klizan,15983,L,19890711,SVK,191,klizan-martin
+105413,Andrej,Martin,Andrej Martin,24415,R,19890920,SVK,183,martin-andrej
+105430,Radu,Albot,Radu Albot,44547,R,19891111,MDA,175,albot-radu
+105453,Kei,Nishikori,Kei Nishikori,15733,R,19891229,JPN,178,nishikori-kei
+105477,Marco,Trungelliti,Marco Trungelliti,38517,R,19900131,ARG,178,trungelliti-marco
+105554,Daniel,Evans,Daniel Evans,16375,R,19900523,GBR,175,evans-daniel
+105575,Ricardas,Berankis,Ricardas Berankis,22956,R,19900621,LTU,175,berankis-ricardas
+105583,Dusan,Lajovic,Dusan Lajovic,39234,R,19900630,SRB,183,lajovic-dusan
+105613,Norbert,Gombos,Norbert Gombos,50139,R,19900813,SVK,193,gombos-norbert
+105655,Hiroki,Moriya,Hiroki Moriya,32466,R,19901016,JPN,168,moriya-hiroki
+105671,Gastao,Elias,Gastao Elias,15858,R,19901124,POR,180,elias-gastao
+105676,David,Goffin,David Goffin,25838,R,19901207,BEL,180,goffin-david
+105683,Milos,Raonic,Milos Raonic,18111,R,19901227,CAN,196,raonic-milos
+105777,Grigor,Dimitrov,Grigor Dimitrov,23581,R,19910516,BUL,191,dimitrov-grigor
+105807,Pablo,Carreno Busta,Pablo Carreno Busta,40800,R,19910712,ESP,188,carreno-busta-pablo
+105814,Maximilian,Neuchrist,Maximilian Neuchrist,46259,R,19910722,AUT,,neuchrist-maximilian
+105841,Lorenzo,Giustino,Lorenzo Giustino,48626,R,19910910,ITA,180,giustino-lorenzo
+105870,Yannick,Hanfmann,Yannick Hanfmann,47975,R,19911113,GER,193,hanfmann-yannick
+105882,Stefano,Travaglia,Stefano Travaglia,36300,R,19911228,ITA,185,travaglia-stefano
+105902,James,Duckworth,James Duckworth,39711,R,19920121,AUS,183,duckworth-james
+105911,Andrea,Collarini,Andrea Collarini,43761,L,19920131,ARG,183,collarini-andrea
+105916,Marton,Fucsovics,Marton Fucsovics,47770,R,19920208,HUN,188,fucsovics-marton
+105932,Nikoloz,Basilashvili,Nikoloz Basilashvili,26204,R,19920223,GEO,185,basilashvili-nikoloz
+105938,Antoine,Escoffier,Antoine Escoffier,49663,R,19920229,FRA,185,escoffier-antoine
+105948,Federico,Coria,Federico Coria,54573,R,19920309,ARG,180,coria-federico
+105952,Renzo,Olivo,Renzo Olivo,55787,R,19920315,ARG,178,olivo-renzo
+106000,Damir,Dzumhur,Damir Dzumhur,49172,R,19920520,BIH,175,dzumhur-damir
+106005,Constant,Lestienne,Constant Lestienne,62790,R,19920523,FRA,180,lestienne-constant
+106034,Yasutaka,Uchiyama,Yasutaka Uchiyama,46390,R,19920805,JPN,183,uchiyama-yasutaka
+106043,Diego,Schwartzman,Diego Schwartzman,48599,R,19920816,ARG,170,schwartzman-diego
+106044,Nicolas,Kicker,Nicolas Kicker,66086,R,19920816,ARG,178,kicker-nicolas
+106057,Facundo,Mena,Facundo Mena,38180,R,19920922,ARG,183,mena-facundo
+106065,Marco,Cecchinato,Marco Cecchinato,44549,R,19920930,ITA,185,cecchinato-marco
+106071,Bernard,Tomic,Bernard Tomic,17080,R,19921021,AUS,196,tomic-bernard
+106072,Alexey,Vatutin,Alexey Vatutin,52462,R,19921027,RUS,178,vatutin-alexey
+106075,Jozef,Kovalik,Jozef Kovalik,57021,R,19921104,SVK,183,kovalik-jozef
+106078,Egor,Gerasimov,Egor Gerasimov,49283,R,19921111,BLR,196,gerasimov-egor
+106109,Alex,Bolt,Alex Bolt,58369,L,19930105,AUS,183,bolt-alex
+106121,Taro,Daniel,Taro Daniel,48632,R,19930127,JPN,191,daniel-taro
+106148,Roberto,Carballes Baena,Roberto Carballes Baena,51141,R,19930323,ESP,183,carballes-baena-roberto
+106162,Franco,Agamenone,Franco Agamenone,65606,R,19930415,ITA,191,agamenone-franco
+106167,Joris,De Loore,Joris De Loore,45258,R,19930421,BEL,191,de-loore-joris
+106172,Maxime,Chazal,Maxime Chazal,17065,R,19930424,FRA,175,chazal-maxime
+106177,Oriol,Roca Batalla,Oriol Roca Batalla,51100,R,19930430,ESP,175,roca-batalla-oriol
+106186,Jason,Kubler,Jason Kubler,39726,R,19930519,AUS,178,kubler-jason
+106187,Denis,Yevseyev,Denis Yevseyev,50847,R,19930522,KAZ,188,yevseyev-denis
+106198,Hugo,Dellien,Hugo Dellien,57289,R,19930616,BOL,180,dellien-hugo
+106203,Pedro,Sakamoto,Pedro Sakamoto,65576,R,19930629,BRA,178,sakamoto-pedro
+106210,Jiri,Vesely,Jiri Vesely,41857,L,19930710,CZE,198,vesely-jiri
+106218,Marcos,Giron,Marcos Giron,42379,R,19930724,USA,180,giron-marcos
+106220,Dimitar,Kuzmanov,Dimitar Kuzmanov,51009,R,19930728,BUL,183,kuzmanov-dimitar
+106234,Aslan,Karatsev,Aslan Karatsev,60502,R,19930904,RUS,185,karatsev-aslan
+106264,Karue,Sell,Karue Sell,52057,R,19931113,BRA,183,sell-karue
+106283,Mitchell,Krueger,Mitchell Krueger,52276,R,19940112,USA,188,krueger-mitchell
+106293,Kimmer,Coppejans,Kimmer Coppejans,54955,R,19940207,BEL,178,coppejans-kimmer
+106296,Gregoire,Barrere,Gregoire Barrere,67154,R,19940216,FRA,183,barrere-gregoire
+106298,Lucas,Pouille,Lucas Pouille,57703,R,19940223,FRA,185,pouille-lucas
+106310,Alexander,Ritschard,Alexander Ritschard,56017,R,19940324,SUI,193,ritschard-alexander
+106329,Thiago,Monteiro,Thiago Monteiro,47603,L,19940531,BRA,183,monteiro-thiago
+106348,Evgeny,Karlovskiy,Evgeny Karlovskiy,54903,R,19940807,RUS,191,karlovskiy-evgeny
+106362,Laurent,Lokoli,Laurent Lokoli,66002,R,19941018,FRA,188,lokoli-laurent
+106380,Gonzalo,Villanueva,Gonzalo Villanueva,85877,R,19950113,ARG,175,villanueva-gonzalo
+106393,Frederico,Ferreira Silva,Frederico Ferreira Silva,66484,L,19950318,POR,178,ferreira-silva-frederico
+106398,Pedro,Cachin,Pedro Cachin,73987,R,19950412,ARG,185,cachin-pedro
+106415,Yoshihito,Nishioka,Yoshihito Nishioka,59281,L,19950927,JPN,170,nishioka-yoshihito
+106421,Daniil,Medvedev,Daniil Medvedev,163504,R,19960211,RUS,198,medvedev-daniil
+106423,Thanasi,Kokkinakis,Thanasi Kokkinakis,71280,R,19960410,AUS,193,kokkinakis-thanasi
+106425,Blake,Mott,Blake Mott,54387,R,19960421,AUS,180,mott-blake
+106426,Cristian,Garin,Cristian Garin,64570,R,19960530,CHI,185,garin-cristian
+106432,Borna,Coric,Borna Coric,64580,R,19961114,CRO,188,coric-borna
+109054,Daniel,Masur,Daniel Masur,53483,R,19941106,GER,183,masur-daniel
+109303,Stefano,Napolitano,Stefano Napolitano,42152,R,19950411,ITA,196,napolitano-stefano
+109694,Pedro,Araujo,Pedro Araujo,289942,R,20020326,POR,180,araujo-pedro
+109739,Maximilian,Marterer,Maximilian Marterer,71660,L,19950615,GER,188,marterer-maximilian
+110602,Dennis,Novak,Dennis Novak,59304,R,19930828,AUT,183,novak-dennis
+111153,Christopher,Eubanks,Christopher Eubanks,197516,R,19960505,USA,201,eubanks-christopher
+111187,Kaichi,Uchida,Kaichi Uchida,82579,R,19940823,JPN,180,uchida-kaichi
+111190,Zhizhen,Zhang,Zhizhen Zhang,75813,R,19961016,CHN,193,zhang-zhizhen
+111200,Elias,Ymer,Elias Ymer,83661,R,19960410,SWE,185,ymer-elias
+111202,Hyeon,Chung,Hyeon Chung,83211,R,19960519,KOR,188,chung-hyeon
+111442,Jordan,Thompson,Jordan Thompson,87690,R,19940420,AUS,183,thompson-jordan
+111454,Li,Tu,Li Tu,49417,R,19960527,AUS,183,tu-li
+111456,Mackenzie,Mcdonald,Mackenzie McDonald,63438,R,19950416,USA,178,mcdonald-mackenzie
+111460,Quentin,Halys,Quentin Halys,90798,R,19961026,FRA,191,halys-quentin
+111505,Enzo,Couacaud,Enzo Couacaud,74441,R,19950301,FRA,183,couacaud-enzo
+111513,Laslo,Djere,Laslo Djere,97231,R,19950602,SRB,188,djere-laslo
+111575,Karen,Khachanov,Karen Khachanov,90080,R,19960521,RUS,198,khachanov-karen
+111576,Sumit,Nagal,Sumit Nagal,131566,R,19970816,IND,178,nagal-sumit
+111578,Stefan,Kozlov,Stefan Kozlov,77007,R,19980201,USA,183,kozlov-stefan
+111581,Michael,Mmoh,Michael Mmoh,131442,R,19980110,USA,188,mmoh-michael
+111761,Benjamin,Lock,Benjamin Lock,96859,R,19930304,ZIM,198,lock-benjamin
+111788,Naoki,Nakagawa,Naoki Nakagawa,52069,R,19961119,JPN,180,nakagawa-naoki
+111794,Kamil,Majchrzak,Kamil Majchrzak,108709,R,19960113,POL,180,majchrzak-kamil
+111797,Nicolas,Jarry,Nicolas Jarry,89632,R,19951011,CHI,201,jarry-nicolas
+111806,Fajing,Sun,Fajing Sun,163438,R,19961003,CHN,178,sun-fajing
+111815,Cameron,Norrie,Cameron Norrie,95935,L,19950823,GBR,188,norrie-cameron
+117357,Omar,Jasika,Omar Jasika,79467,L,19970518,AUS,183,jasika-omar
+117359,Jake,Delaney,Jake Delaney,79223,R,19970514,AUS,185,delaney-jake
+117360,Marc,Polmans,Marc Polmans,80665,R,19970502,AUS,188,polmans-marc
+121411,Moez,Echargui,Moez Echargui,153826,R,19930110,TUN,178,echargui-moez
+122078,Dmitry,Popko,Dmitry Popko,50901,R,19961024,KAZ,191,popko-dmitry
+122113,Yurii,Dzhavakian,Yurii Dzhavakian,60584,R,19930507,UKR,,dzhavakian-yurii
+122298,Botic,Van De Zandschulp,Botic van de Zandschulp,102339,R,19951004,NED,191,van-de-zandschulp-botic
+122330,Alexander,Bublik,Alexander Bublik,163480,R,19970617,KAZ,196,bublik-alexander
+122352,Christoph,Negritu,Christoph Negritu,55745,R,19940321,GER,193,negritu-christoph
+122669,Juan Pablo,Varillas,Juan Pablo Varillas,72248,R,19951006,PER,185,varillas-juan-pablo
+122909,Andres,Martin,Andres Martin,321862,U,19760202,ARG,,martin-andres
+123755,Daniel Elahi,Galan,Daniel Elahi Galan,92074,R,19960618,COL,191,galan-daniel-elahi
+123809,Ivan,Gakhov,Ivan Gakhov,76515,L,19961104,RUS,191,gakhov-ivan
+123828,Jan,Choinski,Jan Choinski,105607,R,19960610,GBR,196,choinski-jan
+123921,Calvin,Hemery,Calvin Hemery,81271,R,19950128,FRA,191,hemery-calvin
+123983,Nerman,Fatic,Nerman Fatic,63090,R,19941024,BIH,191,fatic-nerman
+124014,Ernesto,Escobedo,Ernesto Escobedo,80491,R,19960704,MEX,185,escobedo-ernesto
+124079,Pedro,Martinez,Pedro Martinez,77223,R,19970426,ESP,185,martinez-pedro
+124116,Sebastian,Ofner,Sebastian Ofner,83397,R,19960512,AUT,191,ofner-sebastian
+124186,Alexandre,Muller,Alexandre Muller,88992,R,19970201,FRA,183,muller-alexandre
+124187,Reilly,Opelka,Reilly Opelka,130400,R,19970828,USA,211,opelka-reilly
+125847,Jelle,Sels,Jelle Sels,56361,R,19950810,NED,188,sels-jelle
+126094,Andrey,Rublev,Andrey Rublev,106755,R,19971020,RUS,188,rublev-andrey
+126106,Ryan,Peniston,Ryan Peniston,91240,L,19951110,GBR,180,peniston-ryan
+126107,Michael,Geerts,Michael Geerts,103625,R,19950117,BEL,178,geerts-michael
+126125,Maxime,Janvier,Maxime Janvier,107625,R,19961018,FRA,196,janvier-maxime
+126127,Benjamin,Bonzi,Benjamin Bonzi,94485,R,19960609,FRA,183,bonzi-benjamin
+126128,Roman,Safiullin,Roman Safiullin,124930,R,19970807,RUS,185,safiullin-roman
+126129,Billy,Harris,Billy Harris,111837,R,19950125,GBR,193,harris-billy
+126149,Gianluca,Mager,Gianluca Mager,69500,R,19941201,ITA,188,mager-gianluca
+126183,Mariano,Kestelboim,Mariano Kestelboim,99377,R,19960206,ARG,185,kestelboim-mariano
+126185,Evgenii,Tiurnev,Evgenii Tiurnev,115463,R,19970408,RUS,191,tiurnev-evgenii
+126203,Taylor,Fritz,Taylor Fritz,136042,R,19971028,USA,196,fritz-taylor
+126205,Tommy,Paul,Tommy Paul,138546,R,19970517,USA,185,paul-tommy
+126206,Alex,Rybakov,Alex Rybakov,101157,L,19970127,USA,185,rybakov-alex
+126207,Frances,Tiafoe,Frances Tiafoe,101101,R,19980120,USA,188,tiafoe-frances
+126208,Yusuke,Takahashi,Yusuke Takahashi,177644,R,19971017,JPN,170,takahashi-yusuke
+126209,Peter,Bertran,Peter Bertran,120958,R,19960305,DOM,183,bertran-peter
+126214,Alejandro,Tabilo,Alejandro Tabilo,102151,L,19970602,CHI,188,tabilo-alejandro
+126239,Arthur,Rinderknech,Arthur Rinderknech,63606,R,19950723,FRA,196,rinderknech-arthur
+126340,Viktor,Durasovic,Viktor Durasovic,96239,R,19970319,NOR,185,durasovic-viktor
+126409,Hugo,Grenier,Hugo Grenier,107357,R,19960323,FRA,196,grenier-hugo
+126504,Andrea,Pellegrino,Andrea Pellegrino,93597,R,19970323,ITA,185,pellegrino-andrea
+126523,Bernabe,Zapata Miralles,Bernabe Zapata Miralles,108565,R,19970112,ESP,183,zapata-miralles-bernabe
+126535,Carlos,Taberner,Carlos Taberner,108559,R,19970808,ESP,183,taberner-carlos
+126610,Matteo,Berrettini,Matteo Berrettini,112783,R,19960412,ITA,196,berrettini-matteo
+126652,Jay,Clarke,Jay Clarke,197809,R,19980727,GBR,183,clarke-jay
+126663,Juan Pablo,Ficovich,Juan Pablo Ficovich,113979,R,19970124,ARG,191,ficovich-juan-pablo
+126762,Aleksandre,Bakshi,Aleksandre Bakshi,118166,L,19970715,GEO,180,bakshi-aleksandre
+126774,Stefanos,Tsitsipas,Stefanos Tsitsipas,122366,R,19980812,GRE,193,tsitsipas-stefanos
+126845,Max,Purcell,Max Purcell,124658,R,19980403,AUS,185,purcell-max
+126846,Aleksandar,Vukic,Aleksandar Vukic,124656,R,19960406,AUS,188,vukic-aleksandar
+126964,Vitaliy,Sachko,Vitaliy Sachko,100069,R,19970714,UKR,188,sachko-vitaliy
+127123,Mateus,Alves,Mateus Alves,204776,R,20010123,BRA,193,alves-mateus
+127157,Daniel,Altmaier,Daniel Altmaier,127208,R,19980912,GER,188,altmaier-daniel
+127339,Borna,Gojo,Borna Gojo,124916,R,19980227,CRO,196,gojo-borna
+127760,Lukas,Klein,Lukas Klein,163636,R,19980322,SVK,193,klein-lukas
+128034,Hubert,Hurkacz,Hubert Hurkacz,158896,R,19970211,POL,196,hurkacz-hubert
+129911,Marat,Sharipov,Marat Sharipov,326246,R,20021009,RUS,188,sharipov-marat
+131905,Manuel,Guinard,Manuel Guinard,121182,R,19951115,FRA,198,guinard-manuel
+131911,Lucas,Poullain,Lucas Poullain,135778,R,19951205,FRA,175,poullain-lucas
+131934,Andrea,Vavassori,Andrea Vavassori,95801,R,19950505,ITA,193,vavassori-andrea
+132041,Alfredo,Perez,Alfredo Perez,134602,R,19970522,USA,193,perez-alfredo
+132052,Christian,Langmo,Christian Langmo,187230,R,19960601,USA,191,langmo-christian
+132283,Lorenzo,Sonego,Lorenzo Sonego,104847,R,19950511,ITA,191,sonego-lorenzo
+132686,Nuno,Borges,Nuno Borges,125006,R,19970219,POR,185,borges-nuno
+133297,Yosuke,Watanuki,Yosuke Watanuki,157302,R,19980412,JPN,180,watanuki-yosuke
+133430,Denis,Shapovalov,Denis Shapovalov,117916,L,19990415,CAN,185,shapovalov-denis
+133835,Gijs,Brouwer,Gijs Brouwer,104967,L,19960314,NED,191,brouwer-gijs
+133872,Enrico,Dalla Valle,Enrico Dalla Valle,106153,R,19980321,ITA,196,dalla-valle-enrico
+133975,Benjamin,Hassan,Benjamin Hassan,108767,R,19950204,LBN,183,hassan-benjamin
+134068,Vadym,Ursu,Vadym Ursu,111857,R,19970101,UKR,183,ursu-vadym
+134329,Blake,Ellis,Blake Ellis,119140,R,19990106,AUS,191,ellis-blake
+134457,Nicolas,Moreno De Alboran,Nicolas Moreno De Alboran,113905,R,19970714,USA,185,moreno-de-alboran-nicolas
+134770,Casper,Ruud,Casper Ruud,119248,R,19981222,NOR,183,ruud-casper
+134840,Raul,Brancaccio,Raul Brancaccio,201847,R,19970504,ITA,185,brancaccio-raul
+134868,Tallon,Griekspoor,Tallon Griekspoor,122368,R,19960702,NED,188,griekspoor-tallon
+135753,Patrick,Maloney,Patrick Maloney,251784,R,20000209,USA,193,maloney-patrick
+136440,Dominik,Koepfer,Dominik Koepfer,129368,L,19940429,GER,180,koepfer-dominik
+144642,Tomas,Barrios Vera,Tomas Barrios Vera,132834,R,19971210,CHI,191,barrios-vera-tomas
+144645,Zdenek,Kolar,Zdenek Kolar,132558,R,19961009,CZE,183,kolar-zdenek
+144656,Corentin,Denolly,Corentin Denolly,126402,L,19970606,FRA,188,denolly-corentin
+144716,Oleg,Prihodko,Oleg Prihodko,152864,R,19971003,UKR,180,prihodko-oleg
+144719,Jaume,Munar,Jaume Munar,126356,R,19970505,ESP,183,munar-jaume
+144748,Kris,Van Wyk,Kris Van Wyk,156826,R,19960929,RSA,185,van-wyk-kris
+144750,Lloyd,Harris,Lloyd Harris,157808,R,19970224,RSA,193,harris-lloyd
+144751,Rigele,Te,Rigele Te,156664,R,19971009,CHN,188,te-rigele
+144821,Genaro Alberto,Olivieri,Genaro Alberto Olivieri,169486,R,19980804,ARG,175,olivieri-genaro-alberto
+144826,Aziz,Dougaz,Aziz Dougaz,172482,L,19970326,TUN,188,dougaz-aziz
+144869,Tomas Martin,Etcheverry,Tomas Martin Etcheverry,169496,R,19990718,ARG,196,etcheverry-tomas-martin
+144870,Federico Agustin,Gomez,Federico Agustin Gomez,146040,R,19961126,ARG,191,gomez-federico-agustin
+144895,Corentin,Moutet,Corentin Moutet,175014,L,19990419,FRA,180,moutet-corentin
+144972,Geoffrey,Blancaneaux,Geoffrey Blancaneaux,141882,R,19980808,FRA,180,blancaneaux-geoffrey
+144985,Ergi,Kirkin,Ergi Kirkin,186629,R,19990127,TUR,180,kirkin-ergi
+149282,Nicolai,Budkov Kjaer,Nicolai Budkov Kjaer,483188,R,20060901,NOR,188,budkov-kjaer-nicolai
+200005,Ugo,Humbert,Ugo Humbert,185388,L,19980626,FRA,188,humbert-ugo
+200008,Alexis,Galarneau,Alexis Galarneau,187236,R,19990302,CAN,180,galarneau-alexis
+200059,Yibing,Wu,Yibing Wu,194186,R,19991014,CHN,183,wu-yibing
+200095,Nicola,Kuhn,Nicola Kuhn,195248,R,20000320,GER,185,kuhn-nicola
+200116,Camilo,Ugo Carabelli,Camilo Ugo Carabelli,196122,R,19990617,ARG,185,ugo-carabelli-camilo
+200175,Miomir,Kecmanovic,Miomir Kecmanovic,198592,R,19990831,SRB,183,kecmanovic-miomir
+200188,Matteo,Martineau,Matteo Martineau,145122,R,19990116,FRA,183,martineau-matteo
+200216,Giovanni,Fonio,Giovanni Fonio,175070,R,19980507,ITA,183,fonio-giovanni
+200221,Alejandro,Davidovich Fokina,Alejandro Davidovich Fokina,157456,R,19990605,ESP,183,davidovich-fokina-alejandro
+200240,Vit,Kopriva,Vit Kopriva,199395,R,19970615,CZE,178,kopriva-vit
+200255,Alexander,Weis,Alexander Weis,144102,R,19970424,ITA,188,weis-alexander
+200259,Ugo,Blanchet,Ugo Blanchet,200777,R,19990105,FRA,175,blanchet-ugo
+200266,Javier,Barranco Cosano,Javier Barranco Cosano,177686,L,19981117,ESP,180,barranco-cosano-javier
+200267,Zizou,Bergs,Zizou Bergs,170946,R,19990603,BEL,185,bergs-zizou
+200273,Hady,Habib,Hady Habib,189540,R,19980821,LIB,188,habib-hady
+200277,Charles,Broom,Charles Broom,202181,R,19980424,GBR,178,broom-charles
+200282,Alex,De Minaur,Alex de Minaur,201239,R,19990217,AUS,183,de-minaur-alex
+200303,Pavel,Kotov,Pavel Kotov,203258,R,19981118,RUS,191,kotov-pavel
+200309,Marek,Gengel,Marek Gengel,202572,R,19950917,CZE,185,gengel-marek
+200318,Yu Hsiou,Hsu,Yu Hsiou Hsu,204329,R,19990402,TPE,178,hsu-yu-hsiou
+200325,Emil,Ruusuvuori,Emil Ruusuvuori,167370,R,19990402,FIN,188,ruusuvuori-emil
+200329,Remy,Bertola,Remy Bertola,145108,R,19980831,SUI,175,bertola-remy
+200335,Felipe,Meligeni Alves,Felipe Meligeni Alves,158748,R,19980219,BRA,185,meligeni-alves-felipe
+200346,Mats,Rosenkranz,Mats Rosenkranz,157394,L,19980823,GER,193,rosenkranz-mats
+200374,Nicolas,Alvarez Varona,Nicolas Alvarez Varona,205989,R,20010518,ESP,188,alvarez-varona-nicolas
+200384,Hugo,Gaston,Hugo Gaston,205906,L,20000926,FRA,173,gaston-hugo
+200385,Dan,Added,Dan Added,191842,R,19990413,FRA,183,added-dan
+200416,August,Holmgren,August Holmgren,207089,R,19980422,DEN,188,holmgren-august
+200436,Zsombor,Piros,Zsombor Piros,205795,R,19991013,HUN,180,piros-zsombor
+200443,Adam,Walton,Adam Walton,207575,R,19990417,AUS,183,walton-adam
+200452,Patrick,Zahraj,Patrick Zahraj,208222,R,19990717,GER,188,zahraj-patrick
+200473,Valentin,Vacherot,Valentin Vacherot,158912,R,19981116,MON,193,vacherot-valentin
+200484,Rudolf,Molleker,Rudolf Molleker,209103,R,20001026,GER,188,molleker-rudolf
+200514,Jurij,Rodionov,Jurij Rodionov,200159,L,19990516,AUT,191,rodionov-jurij
+200516,Patrick,Kypson,Patrick Kypson,210490,R,19991028,USA,188,kypson-patrick
+200572,Nick,Hardt,Nick Hardt,186885,R,20000920,DOM,185,hardt-nick
+200587,Brandon,Holt,Brandon Holt,207050,R,19980406,USA,185,holt-brandon
+200610,Oliver,Crawford,Oliver Crawford,213057,R,19990430,GBR,180,crawford-oliver
+200615,Alexei,Popyrin,Alexei Popyrin,128552,R,19990805,AUS,196,popyrin-alexei
+200624,Sebastian,Korda,Sebastian Korda,195840,R,20000705,USA,196,korda-sebastian
+200647,Sho,Shimabukuro,Sho Shimabukuro,216154,R,19970730,JPN,180,shimabukuro-sho
+200666,Jie,Cui,Jie Cui,201681,R,19980124,CHN,183,cui-jie
+200672,Sergey,Fomin,Sergey Fomin,198223,R,20010201,UZB,180,fomin-sergey
+200677,Rio,Noguchi,Rio Noguchi,217464,R,19981228,JPN,168,noguchi-rio
+200711,Nicolas,Mejia,Nicolas Mejia,187218,R,20000211,COL,183,mejia-nicolas
+200748,Andres,Andrade,Andres Andrade,168420,R,19981214,ECU,180,andrade-andres
+201987,Masamichi,Imamura,Masamichi Imamura,197935,R,19981123,JPN,178,imamura-masamichi
+202058,Thiago Agustin,Tirante,Thiago Agustin Tirante,221515,R,20010410,ARG,185,tirante-thiago-agustin
+202075,Adria,Soriano Barrera,Adria Soriano Barrera,217437,R,19990602,COL,191,soriano-barrera-adria
+202090,Adrian,Andreev,Adrian Andreev,208824,R,20010512,BUL,175,andreev-adrian
+202103,Francisco,Cerundolo,Francisco Cerundolo,221012,R,19980813,ARG,185,cerundolo-francisco
+202104,Sebastian,Baez,Sebastian Baez,221806,R,20001228,ARG,170,baez-sebastian
+202122,Yuta,Shimizu,Yuta Shimizu,217136,L,19990609,JPN,163,shimizu-yuta
+202127,Clement,Tabur,Clement Tabur,206602,R,20000124,FRA,173,tabur-clement
+202146,Luka,Pavlovic,Luka Pavlovic,224534,R,20000330,FRA,196,pavlovic-luka
+202147,Florent,Bax,Florent Bax,226806,R,19990616,FRA,185,bax-florent
+202148,Michiel,De Krom,Michiel De Krom,223481,R,19980627,NED,183,de-krom-michiel
+202195,Maxime,Cressy,Maxime Cressy,226805,R,19970508,USA,201,cressy-maxime
+202199,Carlos,Sanchez Jover,Carlos Sanchez Jover,196922,L,20000721,ESP,173,sanchez-jover-carlos
+202235,Jacopo,Berrettini,Jacopo Berrettini,204764,R,19981127,ITA,193,berrettini-jacopo
+202260,Henri,Squire,Henri Squire,208225,R,20000927,GER,196,squire-henri
+202261,Otto,Virtanen,Otto Virtanen,229218,R,20010621,FIN,193,virtanen-otto
+202262,Filip Cristian,Jianu,Filip Cristian Jianu,230049,R,20010918,ROU,180,jianu-filip-cristian
+202320,Beibit,Zhukayev,Beibit Zhukayev,232780,R,20001012,KAZ,198,zhukayev-beibit
+202342,Ryan,Seggerman,Ryan Seggerman,233060,R,19990806,USA,193,seggerman-ryan
+202354,Matthew,Dellavedova,Matthew Dellavedova,192246,R,20000530,AUS,191,dellavedova-matthew
+202359,Marvin,Moeller,Marvin Moeller,226833,R,19990118,GER,178,moller-marvin
+202385,Jenson,Brooksby,Jenson Brooksby,191873,R,20001026,USA,188,brooksby-jenson
+202398,Michael,Vrbensky,Michael Vrbensky,235930,R,19991226,CZE,180,vrbensky-michael
+202400,Alastair,Gray,Alastair Gray,222958,R,19980622,GBR,193,gray-alastair
+202420,Aidan,Mchugh,Aidan McHugh,220541,R,20000709,GBR,180,mchugh-aidan
+202475,Philip,Henning,Philip Henning,238147,R,20001110,RSA,,henning-philip
+205734,Thiago,Seyboth Wild,Thiago Seyboth Wild,161262,R,20000310,BRA,185,seyboth-wild-thiago
+205842,Arthur,Reymond,Arthur Reymond,180104,L,19990402,FRA,180,reymond-arthur
+206173,Jannik,Sinner,Jannik Sinner,206570,R,20010816,ITA,191,sinner-jannik
+206307,Joao Lucas,Reis Da Silva,Joao Lucas Reis Da Silva,212762,R,20000326,BRA,178,reis-da-silva-joao-lucas
+206467,Federico,Arnaboldi,Federico Arnaboldi,224038,R,20000618,ITA,185,arnaboldi-federico
+206470,Cezar,Cretu,Cezar Cretu,196920,R,20010424,ROU,188,cretu-cezar
+206499,Aleksandar,Kovacevic,Aleksandar Kovacevic,187608,R,19980829,USA,183,kovacevic-aleksandar
+206589,Gabi Adrian,Boitan,Gabi Adrian Boitan,228670,R,19990711,ROU,185,boitan-gabi-adrian
+206681,Fabian,Marozsan,Fabian Marozsan,218259,R,19991008,HUN,193,marozsan-fabian
+206703,Paul,Jubb,Paul Jubb,220537,R,19991031,GBR,180,jubb-paul
+206748,Giulio,Zeppieri,Giulio Zeppieri,237188,L,20011207,ITA,183,zeppieri-giulio
+206750,Daniil,Glinka,Daniil Glinka,210033,L,20000512,EST,188,glinka-daniil
+206867,Tommaso,Compagnucci,Tommaso Compagnucci,227447,R,19991105,ITA,173,compagnucci-tommaso
+206889,Clement,Chidekh,Clement Chidekh,231620,R,20010613,FRA,180,chidekh-clement
+206904,Gauthier,Onclin,Gauthier Onclin,233700,R,20010226,BEL,180,onclin-gauthier
+206909,Brandon,Nakashima,Brandon Nakashima,235576,R,20010803,USA,188,nakashima-brandon
+206912,Stuart,Parker,Stuart Parker,212809,R,19970730,GBR,185,parker-stuart
+207130,Matias,Soto,Matias Soto,241039,R,19990427,CHI,170,soto-matias
+207181,Govind,Nanda,Govind Nanda,206496,R,20010217,USA,178,nanda-govind
+207182,Emilio,Nava,Emilio Nava,232057,R,20011202,USA,185,nava-emilio
+207213,Duje,Ajdukovic,Duje Ajdukovic,207081,R,20010205,CRO,188,ajdukovic-duje
+207231,Mathys,Erhard,Mathys Erhard,213076,R,20011026,FRA,188,erhard-mathys
+207411,Jesper,De Jong,Jesper de Jong,244420,R,20000531,NED,180,de-jong-jesper
+207415,Daniel,Michalski,Daniel Michalski,257091,R,20000111,POL,180,michalski-daniel
+207484,Neil,Oberleitner,Neil Oberleitner,230344,R,19990805,AUT,193,oberleitner-neil
+207491,Sandro,Kopp,Sandro Kopp,199379,R,20000526,AUT,185,kopp-sandro
+207494,Dalibor,Svrcina,Dalibor Svrcina,260122,R,20021002,CZE,178,svrcina-dalibor
+207518,Lorenzo,Musetti,Lorenzo Musetti,261015,R,20020303,ITA,185,musetti-lorenzo
+207546,Pol,Martin Tiffon,Pol Martin Tiffon,217448,R,19990730,ESP,183,martin-tiffon-pol
+207605,Jakub,Paul,Jakub Paul,213979,R,19990322,SUI,180,paul-jakub
+207608,Timofey,Skatov,Timofey Skatov,229275,R,20010121,KAZ,175,skatov-timofey
+207609,Alexey,Zakharov,Alexey Zakharov,244416,R,20000421,RUS,188,zakharov-alexey
+207660,Nicholas David,Ionel,Nicholas David Ionel,253842,R,20021012,ROU,,ionel-nicholas-david
+207663,Nikolas,Sanchez Izquierdo,Nikolas Sanchez Izquierdo,193644,R,19990315,ESP,185,sanchez-izquierdo-nikolas
+207669,Robert,Strombachs,Robert Strombachs,263699,R,19990915,LAT,191,strombachs-robert
+207678,Juan Manuel,Cerundolo,Juan Manuel Cerundolo,248861,L,20011115,ARG,183,cerundolo-juan-manuel
+207680,Facundo,Diaz Acosta,Facundo Diaz Acosta,264372,L,20001215,ARG,183,diaz-acosta-facundo
+207681,Francisco,Comesana,Francisco Comesana,255420,R,20001006,ARG,178,comesana-francisco
+207686,Alexander,Shevchenko,Alexander Shevchenko,264344,R,20001129,KAZ,185,shevchenko-alexander
+207704,Alex,Marti Pujolras,Alex Marti Pujolras,217446,R,19990210,ESP,185,marti-pujolras-alex
+207728,Moerani,Bouzige,Moerani Bouzige,244418,R,19990713,AUS,180,bouzige-moerani
+207729,Tristan,Boyer,Tristan Boyer,232036,R,20010421,USA,188,boyer-tristan
+207732,Miguel,Damas,Miguel Damas,192862,R,19991221,ESP,208,damas-miguel
+207733,Jack,Draper,Jack Draper,258749,L,20011222,GBR,193,draper-jack
+207760,Anton,Matusevich,Anton Matusevich,245110,R,20010530,GBR,185,matusevich-anton
+207764,Ryan,Nijboer,Ryan Nijboer,239879,R,19990728,NED,180,nijboer-ryan
+207785,George,Loffhagen,George Loffhagen,258978,R,20010419,GBR,188,loffhagen-george
+207799,Matheus,Pucinelli De Almeida,Matheus Pucinelli De Almeida,264978,R,20010401,BRA,183,pucinelli-de-almeida-matheus
+207815,Guido Ivan,Justo,Guido Ivan Justo,255418,R,19971217,ARG,178,justo-guido-ivan
+207830,Tomas,Machac,Tomas Machac,238300,R,20001013,CZE,183,machac-tomas
+207884,Arthur,Bouquier,Arthur Bouquier,267576,R,20001225,FRA,188,bouquier-arthur
+207925,Flavio,Cobolli,Flavio Cobolli,273680,R,20020506,ITA,183,flavio-cobolli
+207969,Stefan,Dostanic,Stefan Dostanic,274435,R,20011104,USA,188,dostanic-stefan
+207985,Jacob,Fearnley,Jacob Fearnley,275948,R,20010715,GBR,183,fearnley-jacob
+207989,Carlos,Alcaraz,Carlos Alcaraz,275923,R,20030505,ESP,183,alcaraz-carlos
+208004,Harold,Mayot,Harold Mayot,248846,R,20020204,FRA,180,mayot-harold
+208014,Rinky,Hijikata,Rinky Hijikata,237452,R,20010223,AUS,178,hijikata-rinky
+208021,Kyrian,Jacquet,Kyrian Jacquet,267577,R,20010511,FRA,178,jacquet-kyrian
+208024,Max,Alcala Gurri,Max Alcala Gurri,281447,R,20020911,ESP,178,alcala-gurri-max
+208029,Holger,Rune,Holger Rune,283070,R,20030429,DEN,188,rune-holger
+208046,Pedro,Boscardin Dias,Pedro Boscardin Dias,284096,R,20030128,BRA,180,boscardin-dias-pedro
+208055,Ajeet,Rai,Ajeet Rai,244410,R,19990118,NZL,188,rai-ajeet
+208069,Max,Houkes,Max Houkes,277179,L,20000703,NED,188,houkes-max
+208071,Oleksii,Krutykh,Oleksii Krutykh,232615,R,20000310,UKR,185,krutykh-oleksii
+208078,Tomas,Farjat,Tomas Farjat,270414,R,20010215,ARG,188,farjat-tomas
+208103,Jiri,Lehecka,Jiri Lehecka,254742,R,20011108,CZE,185,lehecka-jiri
+208104,Andrea,Picchione,Andrea Picchione,281515,R,19980607,ITA,183,picchione-andrea
+208118,Eliot,Spizzirri,Eliot Spizzirri,288748,R,20011223,USA,183,spizzirri-eliot
+208119,Liam,Draxl,Liam Draxl,223513,R,20011205,CAN,185,draxl-liam
+208134,Luca,Nardi,Luca Nardi,289233,R,20030806,ITA,185,nardi-luca
+208143,Garrett,Johns,Garrett Johns,239967,R,20001217,USA,180,johns-garrett
+208144,Giles,Hussey,Giles Hussey,289173,L,19970526,GBR,185,hussey-giles
+208169,Titouan,Droguet,Titouan Droguet,243925,R,20010615,FRA,191,droguet-titouan
+208182,Saba,Purtseladze,Saba Purtseladze,258324,R,20010820,GEO,191,purtseladze-saba
+208210,Chris,Rodesch,Chris Rodesch,225273,R,20010718,LUX,198,rodesch-chris
+208223,Alvaro,Guillen Meza,Alvaro Guillen Meza,269909,R,20030102,ECU,175,guillen-meza-alvaro
+208230,Alibek,Kachmazov,Alibek Kachmazov,295178,R,20020817,RUS,185,kachmazov-alibek
+208233,Mattia,Bellucci,Mattia Bellucci,294337,L,20010601,ITA,175,bellucci-mattia
+208240,Alexandr,Binda,Alexandr Binda,295881,R,20010922,ITA,175,binda-alexandr
+208257,Fabrizio,Andaloro,Fabrizio Andaloro,291790,R,20010131,ITA,185,andaloro-fabrizio
+208260,Zachary,Svajda,Zachary Svajda,298247,R,20021129,USA,175,svajda-zachary
+208262,Alejo Lorenzo,Lingua Lavallen,Alejo Lorenzo Lingua Lavallen,265808,L,20010309,ARG,175,lingua-lavallen-alejo-lorenzo
+208278,Shintaro,Mochizuki,Shintaro Mochizuki,298795,R,20030602,JPN,175,mochizuki-shintaro
+208279,Alejandro,Moro Canas,Alejandro Moro Canas,250857,R,20001207,ESP,183,moro-canas-alejandro
+208286,Matteo,Arnaldi,Matteo Arnaldi,299538,R,20010222,ITA,185,arnaldi-matteo
+208293,Gonzalo,Bueno,Gonzalo Bueno,299765,R,20040403,PER,173,bueno-gonzalo
+208316,Valentin,Royer,Valentin Royer,255449,R,20010529,FRA,188,royer-valentin
+208328,Max,Wiskandt,Max Wiskandt,300296,R,20020201,GER,191,wiskandt-max
+208342,Tyler,Zink,Tyler Zink,265147,R,20010130,USA,185,zink-tyler
+208353,Francesco,Maestrelli,Francesco Maestrelli,261017,R,20021221,ITA,196,maestrelli-francesco
+208361,Gustavo,Heide,Gustavo Heide,302582,R,20020228,BRA,191,heide-gustavo
+208363,Mariano,Navone,Mariano Navone,271389,R,20010227,ARG,178,navone-mariano
+208364,Franco,Roncadelli,Franco Roncadelli,240797,L,20000206,URU,185,roncadelli-franco
+208389,James,Trotter,James Trotter,255993,R,19990729,JPN,183,trotter-james-kent
+208421,Lilian,Marmousez,Lilian Marmousez,248845,R,20020103,FRA,180,marmousez-lilian
+208502,Dominic,Stricker,Dominic Stricker,296369,L,20020816,SUI,183,stricker-dominic-stephan
+208659,Giovanni,Mpetshi Perricard,Giovanni Mpetshi Perricard,289146,R,20030708,FRA,203,mpetshi-perricard-giovanni
+208819,Max Hans,Rehberg,Max Hans Rehberg,300293,R,20030913,GER,183,rehberg-max-hans
+208843,Jerome,Kym,Jerome Kym,309071,R,20030212,SUI,198,kym-jerome
+208852,Stefanos,Sakellaridis,Stefanos Sakellaridis,302567,R,20040913,GRE,196,sakellaridis-stefanos
+208854,Aidan,Mayo,Aidan Mayo,309157,R,20030514,USA,183,mayo-aidan
+208859,Francesco,Passaro,Francesco Passaro,258908,R,20010107,ITA,180,passaro-francesco
+208876,Egor,Agafonov,Egor Agafonov,311586,R,20020905,RUS,188,agafonov-egor
+208882,Roman Andres,Burruchaga,Roman Andres Burruchaga,287181,R,20020123,ARG,183,burruchaga-roman-andres
+208902,Johannus,Monday,Johannus Monday,313822,L,20020122,GBR,198,monday-johannus
+208913,Juan Bautista,Torres,Juan Bautista Torres,315774,R,20020402,ARG,178,torres-juan-bautista
+208937,Kasidit,Samrej,Kasidit Samrej,230306,R,20010120,THA,191,samrej-kasidit
+209070,Arthur,Cazaux,Arthur Cazaux,287803,R,20020823,FRA,183,cazaux-arthur
+209098,Hamad,Medjedovic,Hamad Medjedovic,321404,R,20030718,SRB,188,mededovic-hamad
+209113,Gabriel,Diallo,Gabriel Diallo,280151,R,20010924,CAN,203,diallo-gabriel
+209131,Eliakim,Coulibaly,Eliakim Coulibaly,321948,L,20020505,CIV,183,coulibaly-eliakim
+209147,Vilius,Gaubas,Vilius Gaubas,322022,R,20041229,LTU,178,gaubas-vilius
+209185,Alessandro,Pecci,Alessandro Pecci,326524,R,20010323,ITA,198,pecci-alessandro
+209191,Oleksandr,Ovcharenko,Oleksandr Ovcharenko,238867,R,20011017,UKR,185,ovcharenko-oleksandr
+209209,Filip,Misolic,Filip Misolic,216488,R,20010808,AUT,180,misolic-filip
+209226,Adolfo Daniel,Vallejo,Adolfo Daniel Vallejo,326949,R,20040428,PAR,183,vallejo-daniel
+209254,Valerio,Aboian,Valerio Aboian,297139,L,20020614,ARG,183,aboian-valerio
+209259,Arthur,Fery,Arthur Fery,321789,R,20020712,GBR,175,fery-arthur
+209260,Luciano,Darderi,Luciano Darderi,308084,R,20020214,ITA,183,darderi-luciano
+209261,Matteo,Gigante,Matteo Gigante,326111,L,20020104,ITA,,gigante-matteo
+209262,Tristan,Schoolkate,Tristan Schoolkate,275471,R,20010226,AUS,183,schoolkate-tristan
+209263,Matteo,Gigante,Matteo Gigante,326111,L,20020104,ITA,180,gigante-matteo
+209279,Terence,Atmane,Terence Atmane,273679,L,20020109,FRA,193,atmane-terence
+209284,Elmer,Moller,Elmer Moller,499834,R,20030709,DEN,183,moeller-elmer
+209318,Petr,Nesterov,Petr Nesterov,332304,R,20030307,BUL,,nesterov-petr
+209322,Martin,Krumich,Martin Krumich,286492,R,20021226,CZE,188,krumich-martin
+209326,Murphy,Cassone,Murphy Cassone,333007,R,20020816,USA,188,cassone-murphy
+209334,Micah,Braswell,Micah Braswell,283465,R,20011104,USA,183,braswell-micah
+209385,Samuel,Vincent Ruggeri,Samuel Vincent Ruggeri,325141,R,20020522,ITA,191,vincent-ruggeri-samuel
+209405,Daniel,Rincon,Daniel Rincon,307391,L,20030107,ESP,185,rincon-daniel
+209409,Coleman,Wong,Coleman Wong,289106,R,20040606,HKG,191,wong-chak-lam-coleman
+209414,Luca,Van Assche,Luca Van Assche,335102,R,20040511,FRA,178,van-assche-luca
+209416,Juan Carlos,Aguilar,Juan Carlos Aguilar,206029,R,19981120,CAN,168,aguilar-juan-carlos
+209512,Tom,Paris,Tom Paris,334289,R,20020902,FRA,191,paris-tom
+209518,Tibo,Colson,Tibo Colson,255448,R,20000712,BEL,196,colson-tibo
+209849,Sascha,Gueymard Wayenburg,Sascha Gueymard Wayenburg,340741,R,20030801,FRA,188,gueymard-wayenburg-sascha
+209850,Robin,Bertrand,Robin Bertrand,340742,R,20030315,FRA,178,bertrand-robin
+209857,Leandro,Riedi,Leandro Riedi,321788,R,20020127,SUI,191,riedi-leandro
+209860,Ignacio,Buse,Ignacio Buse,322082,R,20040325,PER,185,buse-ignacio
+209863,Leo,Borg,Leo Borg,341148,R,20030515,SWE,183,borg-leo
+209864,Tommaso,Compagnucci,Tommaso Compagnucci,227447,U,19991105,ITA,,compagnucci-tommaso
+209874,Maks,Kasnikowski,Maks Kasnikowski,342835,R,20030706,POL,180,kasnikowski-maks
+209875,Alex,Barrena,Alex Barrena,303307,R,20021010,ARG,175,barrena-alex
+209890,Mili,Poljicak,Mili Poljicak,342975,R,20040713,CRO,185,poljicak-mili
+209899,Ilia,Simakin,Ilia Simakin,342909,R,20031027,RUS,193,simakin-ilia
+209903,Lukas,Neumayer,Lukas Neumayer,339450,R,20020906,AUT,183,neumayer-lukas
+209907,Viacheslav,Bielinskyi,Viacheslav Bielinskyi,339443,R,20031202,UKR,71,bielinskyi-viacheslav
+209911,Guy,Den Ouden,Guy Den Ouden,355526,R,20020408,NED,183,den-ouden-guy
+209916,Marko,Topo,Marko Topo,348701,R,20030913,GER,185,topo-marko
+209920,Raphael,Collignon,Raphael Collignon,355525,R,20020113,BEL,191,collignon-raphael
+209931,Lukas,Pokorny,Lukas Pokorny,349488,R,20020228,SVK,191,pokorny-lukas
+209950,Arthur,Fils,Arthur Fils,338500,R,20040612,FRA,185,fils-arthur
+209951,Petr,Bar Biryukov,Petr Bar Biryukov,373829,L,20020228,RUS,196,bar-biryukov-petr
+209957,Jack,Pinnington Jones,Jack Pinnington Jones,321790,R,20030330,GBR,180,pinnington-jones-jack
+209959,Woobin,Shin,Woobin Shin,285196,R,20040120,KOR,185,shin-woobin
+209976,Dino,Prizmic,Dino Prizmic,349089,R,20050805,CRO,188,prizmic-dino
+209983,Mika,Brunold,Mika Brunold,362612,R,20041002,SUI,191,brunold-mika
+209984,Milos,Karol,Milos Karol,341853,R,20021213,SVK,198,karol-milos
+209992,Juncheng,Shang,Juncheng Shang,348853,L,20050202,CHN,180,shang-juncheng
+210012,Henrique,Rocha,Henrique Rocha,341820,R,20040406,POR,180,rocha-henrique
+210042,Gabriele,Piraino,Gabriele Piraino,381399,L,20031112,ITA,188,piraino-gabriele
+210053,Luka,Mikrut,Luka Mikrut,349090,R,20040416,CRO,188,mikrut-luka
+210084,Jakub,Mensik,Jakub Mensik,372312,U,20050901,CZE,,mensik-jakub
+210097,Ben,Shelton,Ben Shelton,385485,L,20021009,USA,193,shelton-ben
+210107,Bor,Artnak,Bor Artnak,386501,R,20040604,SLO,193,artnak-bor
+210120,Gabriel,Debru,Gabriel Debru,375536,R,20051221,FRA,193,debru-gabriel
+210121,Kokoro,Isomura,Kokoro Isomura,367815,R,20030122,JPN,175,isomura-kokoro
+210136,Mark,Lajal,Mark Lajal,383991,R,20030512,EST,191,lajal-mark
+210150,Jakub,Mensik,Jakub Mensik,372312,R,20050901,CZE,193,mensik-jakub
+210167,Tom,Gentzsch,Tom Gentzsch,380042,R,20030905,GER,191,gentzsch-tom
+210178,Juan Carlos,Prado Angelo,Juan Carlos Prado Angelo,392072,R,20050306,BOL,185,prado-angelo-juan-carlos
+210202,Rodrigo,Pacheco Mendez,Rodrigo Pacheco Mendez,386107,L,20050425,MEX,188,pacheco-mendez-rodrigo
+210220,Edas,Butvilas,Edas Butvilas,385592,R,20040723,LTU,191,butvilas-edas
+210234,Juncheng,Shang,Juncheng Shang,348853,L,20050101,CHN,,shang-juncheng
+210250,Erik,Arutiunian,Erik Arutiunian,393344,R,20041019,BLR,191,arutiunian-erik
+210262,Jaime,Faria,Jaime Faria,341818,R,20030806,POR,188,faria-jaime
+210297,Lautaro,Midon,Lautaro Midon,397014,R,20040329,ARG,180,midon-lautaro
+210317,James,Mccabe,James McCabe,339452,R,20030705,AUS,188,mccabe-james
+210318,Andre,Ilagan,Andre Ilagan,244985,L,20001116,USA,173,ilagan-andre
+210319,Ethan,Quinn,Ethan Quinn,334293,R,20040312,USA,191,quinn-ethan
+210338,Arthur,Gea,Arthur Gea,383987,R,20050102,FRA,180,gea-arthur
+210340,Philip,Sekulic,Philip Sekulic,299481,R,20030905,AUS,191,sekulic-philip
+210377,Luciano Emanuel,Ambrogi,Luciano Emanuel Ambrogi,333081,R,20031119,ARG,188,ambrogi-luciano-emanuel
+210382,Maximus,Jones,Maximus Jones,336621,R,20040905,THA,185,jones-maximus
+210398,Gabriele,Pennaforti,Gabriele Pennaforti,380980,R,20000914,ITA,191,pennaforti-gabriele
+210425,Svyatoslav,Gulin,Svyatoslav Gulin,403858,R,20021204,RUS,178,gulin-svyatoslav
+210460,Nishesh,Basavareddy,Nishesh Basavareddy,407164,R,20050502,USA,180,basavareddy-nishesh
+210498,Gerard,Campana Lee,Gerard Campana Lee,380044,R,20041001,KOR,183,campana-lee-gerard
+210506,Alex,Michelsen,Alex Michelsen,406728,R,20040825,USA,193,michelsen-alex
+210510,Lautaro,Midon,Lautaro Midon,397014,U,20040329,ARG,,midon-lautaro
+210530,Learner,Tien,Learner Tien,412818,L,20051202,USA,180,tien-learner
+210536,Rei,Sakamoto,Rei Sakamoto,413296,R,20060624,JPN,193,sakamoto-rei
+210558,Hynek,Barton,Hynek Barton,372310,R,20040405,CZE,183,barton-hynek
+210682,Federico,Bondioli,Federico Bondioli,407383,L,20050516,ITA,185,bondioli-federico
+210696,Alexander,Blockx,Alexander Blockx,390214,R,20050408,BEL,191,blockx-alexander
+210748,Federico,Cina,Federico Cina,421761,R,20070330,ITA,183,cina-federico
+211325,Aryan,Shah,Aryan Shah,422712,R,20051121,IND,173,shah-aryan
+211346,Andres,Martin,Andres Martin,321862,R,20010707,USA,183,martin-andres
+211500,Tiago,Pereira,Tiago Pereira,409264,R,20040620,POR,,pereira-tiago
+211514,Justin,Engel,Justin Engel,403148,U,20071001,GER,,engel-justin
+211533,Gianluca,Cadenasso ,Gianluca Cadenasso,425525,R,20040929,ITA,178,cadenasso-gianluca
+211663,Joao,Fonseca,Joao Fonseca,403869,R,20060821,BRA,185,fonseca-joao
+211776,Martin,Landaluce,Martin Landaluce,417196,R,20060108,ESP,191,landaluce-martin
+211902,Henry,Searle,Henry Searle,406808,L,20060329,GBR,193,searle-henry
+212021,Martin,Landaluce,Martin Landaluce,417196,R,20060108,ESP,191,landaluce-martin
+212044,Yi,Zhou,Yi Zhou,450685,R,20050314,CHN,193,zhou-yi
+212063,Matej,Dodig,Matej Dodig,420876,R,20050719,CRO,188,dodig-matej
+212082,Joel,Schwaerzler,Joel Schwaerzler,448184,L,20060127,AUT,188,schwarzler-joel-josef
+212202,Alvin Nicholas,Tudorica,Alvin Nicholas Tudorica,262331,U,20020213,CAN,,tudorica-alvin-nicholas
+212256,Colton,Smith,Colton Smith,391865,U,20030305,USA,,smith-colton
