@@ -6,6 +6,7 @@ RANKINGS_JSON = Path("../data/top500.json")
 PLAYERS_CSV   = Path("../data/atp_players.csv")
 OUT_CSV       = Path("../data/all/merged_players.csv")
 
+
 def split_name(full_name: str) -> tuple[str, str]:
     parts = full_name.strip().split()
     return parts[0], " ".join(parts[1:]) if len(parts) > 1 else ""
