@@ -23,7 +23,7 @@ def flatten(player: dict) -> dict:
         "gender":             team.get("gender"),
     }
 
-def main() -> None:
+def main():
     data = json.loads(INFILE.read_text(encoding="utf-8"))["rankings"]
     rows = [flatten(p) for p in data]
     timestamp = datetime.now(timezone.utc).isoformat(timespec="seconds")
