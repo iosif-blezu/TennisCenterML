@@ -22,7 +22,7 @@ tt_logger.debug("Loaded PromptJudgeTool module")
 load_dotenv()
 cfg = get_settings()
 
-# 1) Prompt Variant Generation Chain
+# Prompt Variant Generation Chain
 generate_template = PromptTemplate.from_template(
     """
 You are a prompt engineer. Given a task description, generate {n} alternative
@@ -39,11 +39,11 @@ llm_gen = ChatOpenAI(
     api_key=cfg.OPENAI_API_KEY,
     base_url=cfg.OPENAI_BASE_URL,
 )
-# Use RunnableSequence instead of deprecated LLMChain
+
 generate_chain = generate_template | llm_gen
 tt_logger.info("Initialized generate_chain with model %s", cfg.OPENAI_MODEL_CHAT)
 
-# 2) Prompt Judging Chain
+
 judge_template = PromptTemplate.from_template(
     """
 You are a prompt optimization judge. Given a task and a list of candidate prompts,
@@ -64,7 +64,6 @@ llm_judge = ChatOpenAI(
     api_key=cfg.OPENAI_API_KEY,
     base_url=cfg.OPENAI_BASE_URL,
 )
-# Use RunnableSequence here as well
 judge_chain = judge_template | llm_judge
 tt_logger.info("Initialized judge_chain with model %s", cfg.OPENAI_MODEL_CHAT)
 

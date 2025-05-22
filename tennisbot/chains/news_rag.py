@@ -1,4 +1,3 @@
-# tennisbot/chains/news_rag.py
 from __future__ import annotations
 
 import logging
@@ -16,7 +15,7 @@ from langchain.callbacks.manager import CallbackManagerForToolRun
 from tennisbot.config import get_settings
 from tennisbot.utils.tavily_news import get_tavily_results
 
-# ───────────────────────── logging ──────────────────────────
+# logging
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(name)s — %(message)s",
@@ -25,7 +24,7 @@ tt_logger = logging.getLogger(__name__)
 
 cfg = get_settings()
 
-# ───────────────────────── helpers ──────────────────────────
+# helpers
 def _canonical_url(url: str) -> str:
     return url.split("?", 1)[0].split("#", 1)[0]
 
@@ -35,7 +34,7 @@ def _make_id(url: str) -> str:
 def _safe_meta(meta: dict) -> dict:
     return {k: v for k, v in meta.items() if v is not None}
 
-# ───────────────────────── ingestion ─────────────────────────
+# news ingestion
 def ingest_news(
     raw_articles: Sequence[dict],
     clean_texts: Sequence[str],
@@ -51,12 +50,11 @@ def ingest_news(
         tt_logger.error(msg); raise ValueError(msg)
 
     docs: List[Document] = []
-    seen: set[str] = set()                 # NEW ϟ de-dup within this batch
+    seen: set[str] = set()
     skipped = 0
 
     for art, body in zip(raw_articles, clean_texts):
         url = art.get("url", "").strip()
-        # coerce body→str (AIMessage / dict / etc.)
         if isinstance(body, str):
             body_text = body
         elif hasattr(body, "text"):
@@ -70,7 +68,7 @@ def ingest_news(
             continue
 
         doc_id = _make_id(url)
-        if doc_id in seen:                # duplicate in same ingestion
+        if doc_id in seen:
             skipped += 1
             continue
         seen.add(doc_id)
@@ -103,7 +101,7 @@ def ingest_news(
     after = vectordb._collection.count()
     print(f"[NewsRAG] Added {len(docs)} docs — total {before} → {after}")
 
-# ───────────────────────── tool wrapper ─────────────────────
+# tool wrapper
 class _Input(TypedDict, total=False):
     player_name: str
     k: int
@@ -148,7 +146,6 @@ class NewsRAGTool(BaseTool):
         )
         return self._chain
 
-    # ------------- TOOL ENTRYPOINT -------------------------
     def _run(
         self,
         player_name: str,
@@ -187,7 +184,6 @@ class NewsRAGTool(BaseTool):
     async def _arun(self, *_, **__):
         raise NotImplementedError("NewsRAGTool is synchronous.")
 
-# ───────────────────────── CLI quick test ──────────────────
 if __name__ == "__main__":
     import sys, json
     who = sys.argv[1] if len(sys.argv) > 1 else "Alexander Zverev"

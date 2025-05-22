@@ -39,18 +39,20 @@ def _build_router_llm() -> ChatOpenAI:
         temperature=0.2,
     )
 
-
 SYSTEM_PROMPT = """You are TennisBot, a professional tennis assistant.
+
 Use a function whenever it will help answer accurately.
 When the user asks:
-  – “Who will win ... ?” then call prediction_chain (and the agent may call news_rag & h2h_chain internally).
+  – “Who will win ... ?” then call prediction_chain …
   – “Latest news ...”    then news_rag
   – “Head-to-head ...”   then h2h_chain
   – “Is anyone playing live?” then live_matches
-  – “Where is X ranked?” then rankings +/- player_search + player_info
+  – “Where is X ranked?” then rankings …
   – “Tell me about tournament Y” then tournament_info or calendar
-If no function adds value, answer directly. If you don't know, say so. If the topic is not tennis, say you are a tennis assistant and cannot help.
-"""
+If no function adds value, answer directly.
+If you don’t know, say so.  If the topic is not tennis,
+explain that you’re a tennis-focused assistant."""
+
 
 TOOLS = [
     PlayerSearchTool(),
@@ -66,17 +68,22 @@ TOOLS = [
 ]
 
 
-
 @lru_cache(maxsize=1)
 def get_router_agent():
     """Return a singleton LangChain agent with memory."""
-    # memory = ConversationBufferMemory(memory_key="chat_history", return_messages=True)
+    # 1) create a single ConversationBufferMemory
+    memory = ConversationBufferMemory(
+        memory_key="chat_history",     # this key is what your agent code will see
+        return_messages=True           # so we get full message objects
+    )
+
+    # 2) pass it into initialize_agent
     agent = initialize_agent(
         tools=TOOLS,
         llm=_build_router_llm(),
         agent=AgentType.OPENAI_FUNCTIONS,
         verbose=True,
-        # memory=memory,
+        memory=memory,                 # ← enable memory here
         system_message=SYSTEM_PROMPT,
     )
     return agent

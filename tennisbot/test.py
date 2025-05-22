@@ -10,11 +10,11 @@ def main():
     else:
         print("Type a message (empty line to quit):")
         while True:
-            msg = input("👤 ")
+            msg = input("HUMAN> ")
             if not msg.strip():
                 break
             resp = agent.invoke({"input": msg})
-            print("🤖", resp["output"])
+            print("LLM", resp["output"])
 
 if __name__ == "__main__":
     main()

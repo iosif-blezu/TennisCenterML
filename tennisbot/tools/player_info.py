@@ -1,8 +1,3 @@
-"""
-Return a unified bio/ranking object for a given player_id.
-
-Depends on PlayerSearchTool to resolve names before calling if needed.
-"""
 from typing import Optional, TypedDict
 
 import requests
@@ -34,14 +29,11 @@ class PlayerInfoTool(BaseTool):
     )
 
 
-    def _run(  # <-- note the parameter name
-            self,
-            player_id: int,  # <-- this must match the dict key you pass
-            run_manager: Optional[CallbackManagerForToolRun] = None,
+    def _run(self, player_id: int, run_manager: Optional[CallbackManagerForToolRun] = None,
     ):
         pid = player_id  # keep the variable name simple
 
-        # ---------- First call: core bio ----------------------------------- #
+
         core_url = f"{cfg.endpoint_player}/{pid}"
         try:
             core = requests.get(core_url, timeout=8).json()
@@ -52,7 +44,6 @@ class PlayerInfoTool(BaseTool):
         if not api_pid or str(api_pid).lower() == "unknown":
             return core
 
-        # ---------- Second call: rapid profile ----------------------------- #
         rapid_url = f"{cfg.endpoint_player}/rapid/{api_pid}"
         try:
             rapid = requests.get(rapid_url, timeout=8).json()

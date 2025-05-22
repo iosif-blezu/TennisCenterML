@@ -17,15 +17,12 @@ from tennisbot.config import get_settings
 from tennisbot.tools.player_search import PlayerSearchTool
 from utils.predict_between_two_players import predict_match  # your ML model
 
-# Initialize logging
 tt_logger = logging.getLogger(__name__)
 
 tt_logger.debug("Loaded PredictionTool module")
 
 load_dotenv()
 cfg = get_settings()
-print(cfg.OPENAI_API_KEY)
-print(cfg.TAVILY_API_KEY)
 
 _polish_prompt = PromptTemplate.from_template(
     "You are a seasoned tennis analyst. The model prediction is:\n\n"

@@ -1,13 +1,3 @@
-"""
-Fuzzy search for a tennis player.
-
-Usage:
-    from tennisbot.tools.player_search import PlayerSearchTool
-
-    tool = PlayerSearchTool()
-    result = tool.invoke({"query": "Alcaraz"})
-    # -> {"player_id": 207989, "name": "Carlos Alcaraz"}
-"""
 from typing import Optional, TypedDict
 
 import requests
@@ -46,10 +36,7 @@ class PlayerSearchTool(BaseTool):
         "Returns JSON { player_id, name, score }."
     )
 
-    def _run(               # sync version (fine for short HTTP call)
-        self,
-        query: _InputSchema | str,
-        run_manager: Optional[CallbackManagerForToolRun] = None,
+    def _run(self, query: _InputSchema | str, run_manager: Optional[CallbackManagerForToolRun] = None,
     ) -> _OutputSchema | str:
         # allow LLM to pass bare string
         if isinstance(query, str):

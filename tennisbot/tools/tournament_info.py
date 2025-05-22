@@ -1,4 +1,3 @@
-# tennisbot/tools/tournament_info.py
 from typing import Optional, TypedDict
 
 import requests, requests_cache
