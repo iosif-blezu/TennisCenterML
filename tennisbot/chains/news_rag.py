@@ -1,5 +1,6 @@
 # tennisbot/chains/news_rag.py
 from __future__ import annotations
+
 import logging
 from hashlib import sha256
 from typing import Sequence, TypedDict, Optional, List
@@ -15,12 +16,16 @@ from langchain.callbacks.manager import CallbackManagerForToolRun
 from tennisbot.config import get_settings
 from tennisbot.utils.tavily_news import get_tavily_results
 
+# ───────────────────────── logging ──────────────────────────
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(name)s — %(message)s",
+)
 tt_logger = logging.getLogger(__name__)
+
 cfg = get_settings()
 
-# ────────────────────────────────────────────────────────────────────────────
-# helpers
-# ────────────────────────────────────────────────────────────────────────────
+# ───────────────────────── helpers ──────────────────────────
 def _canonical_url(url: str) -> str:
     return url.split("?", 1)[0].split("#", 1)[0]
 
@@ -30,9 +35,7 @@ def _make_id(url: str) -> str:
 def _safe_meta(meta: dict) -> dict:
     return {k: v for k, v in meta.items() if v is not None}
 
-# ────────────────────────────────────────────────────────────────────────────
-# ingest into Chroma
-# ────────────────────────────────────────────────────────────────────────────
+# ───────────────────────── ingestion ─────────────────────────
 def ingest_news(
     raw_articles: Sequence[dict],
     clean_texts: Sequence[str],
@@ -43,30 +46,35 @@ def ingest_news(
         tt_logger.info("[NewsRAG] Nothing to ingest for %s", player_name)
         return
     if len(raw_articles) != len(clean_texts):
-        tt_logger.error(
-            "[NewsRAG] raw vs clean length mismatch: %d vs %d",
-            len(raw_articles), len(clean_texts),
-        )
-        raise ValueError("raw_articles and clean_texts length mismatch")
+        msg = (f"[NewsRAG] raw vs clean length mismatch: "
+               f"{len(raw_articles)} vs {len(clean_texts)}")
+        tt_logger.error(msg); raise ValueError(msg)
 
     docs: List[Document] = []
+    seen: set[str] = set()                 # NEW ϟ de-dup within this batch
+    skipped = 0
+
     for art, body in zip(raw_articles, clean_texts):
         url = art.get("url", "").strip()
-        # coerce whatever came back into a plain string
+        # coerce body→str (AIMessage / dict / etc.)
         if isinstance(body, str):
             body_text = body
-        elif hasattr(body, "text"):  # e.g. dict-like {"text": "..."}
+        elif hasattr(body, "text"):
             body_text = str(body.text)
-        elif hasattr(body, "content"):  # guard for AIMessage/content attr
+        elif hasattr(body, "content"):
             body_text = str(body.content)
         else:
-            body_text = str(body)  # last-chance fallback
+            body_text = str(body)
 
         if not url or not body_text.strip():
-            tt_logger.debug("Skipping empty URL/body for %s", player_name)
             continue
 
         doc_id = _make_id(url)
+        if doc_id in seen:                # duplicate in same ingestion
+            skipped += 1
+            continue
+        seen.add(doc_id)
+
         docs.append(
             Document(
                 id=doc_id,
@@ -80,10 +88,10 @@ def ingest_news(
             )
         )
 
-    tt_logger.info(
-        "[NewsRAG] Prepared %d docs for ingestion for %s",
-        len(docs), player_name,
-    )
+    if skipped:
+        print(f"[NewsRAG] Skipped {skipped} duplicate URLs for {player_name}")
+
+    tt_logger.info("[NewsRAG] Prepared %d docs for %s", len(docs), player_name)
 
     vectordb = Chroma(
         collection_name=cfg.CHROMA_COLLECTION_NEWS,
@@ -91,16 +99,11 @@ def ingest_news(
         persist_directory=str(cfg.CHROMA_PERSIST_DIR),
     )
     before = vectordb._collection.count()
-    vectordb.add_documents(docs)  # upsert by ID
+    vectordb.add_documents(docs)              # upsert by unique ID
     after = vectordb._collection.count()
-    tt_logger.info(
-        "[NewsRAG] Upserted %d docs for %s (total %d→%d)",
-        len(docs), player_name, before, after,
-    )
+    print(f"[NewsRAG] Added {len(docs)} docs — total {before} → {after}")
 
-# ────────────────────────────────────────────────────────────────────────────
-# NewsRAG retrieval‐QA tool
-# ────────────────────────────────────────────────────────────────────────────
+# ───────────────────────── tool wrapper ─────────────────────
 class _Input(TypedDict, total=False):
     player_name: str
     k: int
@@ -109,13 +112,13 @@ class NewsRAGTool(BaseTool):
     name: str = "news_rag"
     description: str = (
         "Fetch & answer recent news about a tennis player. "
-        "Auto‐scrapes & ingests if none found."
+        "If no articles are cached, the tool scrapes with Tavily and ingests them."
     )
     _chain: RetrievalQA | None = None
 
-    @property
-    def chain(self) -> RetrievalQA:
-        tt_logger.debug("Building NewsRAG RetrievalQA chain")
+    def _get_chain(self) -> RetrievalQA:
+        if self._chain is not None:
+            return self._chain
         vectordb = Chroma(
             collection_name=cfg.CHROMA_COLLECTION_NEWS,
             embedding_function=OpenAIEmbeddings(model=cfg.OPENAI_MODEL_EMBED),
@@ -125,8 +128,9 @@ class NewsRAGTool(BaseTool):
             input_variables=["context", "question"],
             template=(
                 "You are an expert tennis news assistant.\n"
-                "Use ONLY the context to answer in ≤3 sentences. "
-                "If you don't know, say so. Always cite URLs.\n\n"
+                "Use ONLY the context to answer in no more than 3 sentences. "
+                "If the answer is not in the context, say you don't know. "
+                "Always cite the source URL in parentheses.\n\n"
                 "{context}\n\nQuestion: {question}\nAnswer:"
             ),
         )
@@ -144,52 +148,48 @@ class NewsRAGTool(BaseTool):
         )
         return self._chain
 
+    # ------------- TOOL ENTRYPOINT -------------------------
     def _run(
         self,
         player_name: str,
         k: int = 3,
         run_manager: Optional[CallbackManagerForToolRun] = None,
     ) -> str:
-        tt_logger.info("NewsRAGTool invoked for %s (k=%d)", player_name, k)
+        tt_logger.info("[NewsRAG] query for %s (k=%d)", player_name, k)
 
-        # check existing docs
         vectordb = Chroma(
             collection_name=cfg.CHROMA_COLLECTION_NEWS,
             embedding_function=OpenAIEmbeddings(model=cfg.OPENAI_MODEL_EMBED),
             persist_directory=str(cfg.CHROMA_PERSIST_DIR),
         )
-        docs = vectordb._collection.get( where={"player_name": player_name},
-                                         include=["metadatas"], )
-        existing = docs.get("metadatas", [])
-        tt_logger.debug("Found %d existing docs for %s", len(existing), player_name)
+        existing = vectordb._collection.get(
+            where={"player_name": player_name},
+            include=["metadatas"],
+        ).get("metadatas", [])
 
-        # if none, scrape+clean+ingest
+        print(f"[NewsRAG] {len(existing)} cached docs for {player_name}")
+
         if not existing:
-            tt_logger.info("No docs; fetching from Tavily for %s", player_name)
+            print(f"[NewsRAG] Scraping Tavily for {player_name} …")
             raw, clean = get_tavily_results(player_name)
             ingest_news(raw, clean, player_name=player_name)
-            self._chain = None  # rebuild chain with new docs
+            self._chain = None  # refresh chain
 
-        # finally run the QA
-        chain = self.chain
+        chain = self._get_chain()
         chain.retriever.search_kwargs = {
             "k": k,
             "filter": {"player_name": player_name},
         }
         question = f"Latest news about {player_name}"
-        tt_logger.info("Running QA chain for question: %s", question)
         answer = chain.invoke({"query": question})
-        tt_logger.info("NewsRAG answer for %s: %s", player_name, answer)
         return answer
 
     async def _arun(self, *_, **__):
         raise NotImplementedError("NewsRAGTool is synchronous.")
 
-# ────────────────────────────────────────────────────────────────────────────
-# quick CLI test
-# ────────────────────────────────────────────────────────────────────────────
+# ───────────────────────── CLI quick test ──────────────────
 if __name__ == "__main__":
     import sys, json
-    player = sys.argv[1] if len(sys.argv)>1 else "Alexander Zverev"
-    out = NewsRAGTool().invoke({"player_name": player, "k": 4})
-    print(json.dumps({"answer": out}, indent=2, ensure_ascii=False))
+    who = sys.argv[1] if len(sys.argv) > 1 else "Alexander Zverev"
+    result = NewsRAGTool().invoke({"player_name": who, "k": 3})
+    print(json.dumps({"answer": result}, indent=2, ensure_ascii=False))
