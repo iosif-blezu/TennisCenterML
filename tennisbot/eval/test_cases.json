@@ -1,0 +1,46 @@
+[
+  {
+    "chain": "h2h_chain",
+    "input": {
+      "player1_name": "Foo Bar",
+      "player2_name": "Baz Qux"
+    },
+    "expected": "These players have never met on tour."
+  },
+  {
+    "chain": "h2h_chain",
+    "input": {
+      "player1_name": "Roger Federer",
+      "player2_name": "Rafael Nadal",
+      "surface": "Clay"
+    },
+    "expected": "Clay H2H: Federer 3 W – Nadal 14 W\nLast meeting: 2023-06-11 | French Open Final | Nadal d. Federer 6-3, 6-4, 7-5"
+  },
+  {
+    "chain": "news_rag",
+    "input": {
+      "player_name": "Serena Williams",
+      "k": 1
+    },
+    "expected": "Serena Williams announced her retirement after the US Open (https://…)"
+  },
+  {
+    "chain": "prediction_chain",
+    "input": {
+      "player1_name": "Novak Djokovic",
+      "player2_name": "Andy Murray",
+      "surface": "Grass",
+      "best_of": 5,
+      "draw_size": 128
+    },
+    "expected": "{\"winner\": \"Djokovic\", \"confidence\": 87, \"narrative\": \"Djokovic’s superior return game and recent grass‐court form give him the edge…\"}"
+  },
+  {
+    "chain": "prompt_judge",
+    "input": {
+      "task": "Translate English to French: Hello, how are you?",
+      "n": 3
+    },
+    "expected": "Translate this English sentence into idiomatic French: \"Hello, how are you?\""
+  }
+]

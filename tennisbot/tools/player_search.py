@@ -1,29 +1,30 @@
 from typing import Optional, TypedDict
-
-import requests
-import requests_cache
+import requests, requests_cache
 from langchain.tools import BaseTool
 from langchain.callbacks.manager import CallbackManagerForToolRun
 
 from tennisbot.config import get_settings
 
 cfg = get_settings()
-requests_cache.install_cache(
+# Install cache and retrieve controller
+tmp_session = requests_cache.install_cache(
     "player_search_cache",
     expire_after=cfg.CACHE_TTL["players_search"]
 )
-
+cache = requests_cache.get_cache()
+# Print cache configuration
+print(f"[PlayerSearchTool] Cache backend: {cache.__class__.__name__}")
+print(f"[PlayerSearchTool] Cache name: {cache.cache_name}.sqlite")
+print(f"[PlayerSearchTool] TTL (seconds): {cfg.CACHE_TTL['players_search']}")
 
 class _InputSchema(TypedDict):
     query: str
     limit: Optional[int]
 
-
 class _OutputSchema(TypedDict):
     player_id: int
     name: str
     score: float
-
 
 class PlayerSearchTool(BaseTool):
     """Find the best-matching player_id for a fuzzy query (surname, full name…)."""
@@ -49,11 +50,14 @@ class PlayerSearchTool(BaseTool):
         try:
             resp = requests.get(url, params=params, timeout=8)
             resp.raise_for_status()
+            from_cache = getattr(resp, 'from_cache', False)
+            print(f"[PlayerSearchTool] Request URL: {resp.url}")
+            print(f"[PlayerSearchTool] Response from cache: {from_cache}")
         except Exception as e:
             return f"Search API error: {e}"
 
         data = resp.json()
-        if data["total"] == 0:
+        if data.get("total", 0) == 0:
             return "No matching player found."
 
         # pick highest-score hit

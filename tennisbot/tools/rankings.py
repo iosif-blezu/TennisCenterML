@@ -1,6 +1,4 @@
-# tennisbot/tools/rankings.py
 from typing import Optional, TypedDict, List
-
 import requests, requests_cache
 from langchain.tools import BaseTool
 from langchain.callbacks.manager import CallbackManagerForToolRun
@@ -8,17 +6,22 @@ from langchain.callbacks.manager import CallbackManagerForToolRun
 from tennisbot.config import get_settings
 
 cfg = get_settings()
-requests_cache.install_cache(
+# Initialize cache and capture cache object
+tmp_session = requests_cache.install_cache(
     "rankings_cache",
     expire_after=cfg.CACHE_TTL["rankings"]
 )
-
+# Ensure we have the CacheController via get_cache()
+cache = requests_cache.get_cache()
+# Print cache configuration
+print(f"[RankingsTool] Cache backend: {cache.__class__.__name__}")
+print(f"[RankingsTool] Cache name: {cache.cache_name}.sqlite")
+print(f"[RankingsTool] TTL (seconds): {cfg.CACHE_TTL['rankings']}")
 
 class _Input(TypedDict, total=False):
     limit: int          # default 10
     page: int           # default 1
     country: str        # optional ISO-3 filter
-
 
 class _Player(TypedDict):
     rank: int
@@ -26,7 +29,6 @@ class _Player(TypedDict):
     name: str
     country: str
     points: int
-
 
 class RankingsTool(BaseTool):
     name: str = "rankings"
@@ -44,7 +46,12 @@ class RankingsTool(BaseTool):
     ) -> List[_Player] | str:
         params = {"limit": limit, "page": page}
         try:
-            data = requests.get(cfg.endpoint_rankings, params=params, timeout=8).json()
+            resp = requests.get(cfg.endpoint_rankings, params=params, timeout=8)
+            data = resp.json()
+            # Log cache usage
+            from_cache = getattr(resp, 'from_cache', False)
+            print(f"[RankingsTool] Request URL: {resp.url}")
+            print(f"[RankingsTool] Response from cache: {from_cache}")
         except Exception as e:
             return f"Rankings API error: {e}"
 
