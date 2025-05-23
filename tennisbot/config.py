@@ -26,13 +26,13 @@ class Settings(BaseSettings):
         default=None,
         description="Override for self-hosted OpenAI-compatible gateway (LM Studio, Groq, etc.)",
     )
-    OPENAI_API_KEY: str | None = None           # set in env or secrets manager
+    OPENAI_API_KEY: str | None = None
     HF_LOCAL_MODEL: str = Field("phi-4@q8_0", description="Local chat model (LM Studio)")
 
-    TAVILY_API_KEY: str | None = None           # set in env or secrets manager
+    TAVILY_API_KEY: str | None = None
 
-    LLM_TEMPERATURE_CHAT: float = 0.2           # default for analysis / answers
-    LLM_TEMPERATURE_TOOLS: float = 0.0          # deterministic for tool wrappers
+    LLM_TEMPERATURE_CHAT: float = 0.2
+    LLM_TEMPERATURE_TOOLS: float = 0.0
 
     # Vector DB
     CHROMA_PERSIST_DIR: Path = Path("chroma_store")
@@ -48,10 +48,10 @@ class Settings(BaseSettings):
     CACHE_TTL: Dict[str, int] = {
         "players_search": 24 * 3600,   # 24 h
         "player_info":    3600,        # 1 h
-        "rankings":       6 * 3600,    # 6 h
+        "rankings":       24 * 3600,   # 24 h
         "calendar":       12 * 3600,   # 12 h
         "tournament":     12 * 3600,
-        "live":           15,          # practically no cache
+        "live":           60,          # 1 minute
     }
 
     # Evaluation / Deepeval

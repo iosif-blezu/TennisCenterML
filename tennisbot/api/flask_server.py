@@ -1,5 +1,6 @@
 import os
 from dotenv import load_dotenv
+from flask_cors import CORS
 
 ENV_PATH = os.path.join(os.path.dirname(__file__), "..", ".env")
 if os.path.exists(ENV_PATH):
@@ -13,10 +14,12 @@ from tennisbot.config import get_settings
 
 app = Flask(__name__)
 
+CORS(app, origins="http://localhost:3001")
+
 print("FLASK_SERVER: Loading settings…")
 cfg = get_settings()
-print(f"FLASK_SERVER: OPENAI_API_KEY → {'SET' if cfg.OPENAI_API_KEY else 'NOT SET'}")
-print(f"FLASK_SERVER: TAVILY_API_KEY → {'SET' if cfg.TAVILY_API_KEY else 'NOT SET'}")
+print(f"FLASK_SERVER: OPENAI_API_KEY -> {'SET' if cfg.OPENAI_API_KEY else 'NOT SET'}")
+print(f"FLASK_SERVER: TAVILY_API_KEY -> {'SET' if cfg.TAVILY_API_KEY else 'NOT SET'}")
 
 print("FLASK_SERVER: Instantiating router agent…")
 agent = get_router_agent()

@@ -43,13 +43,10 @@ _clean_prompt = PromptTemplate(
     ),
 )
 
-# **Here’s the only change**: chain the prompt + llm with the `|` operator
 _clean_chain = _clean_prompt | _llm
 
 def _clean_single(raw_text: str) -> str:
-    # invoke the new RunnableSequence exactly as before
     result = _clean_chain.invoke({"article": _pre_clean(raw_text)})
-    # when invoke returns a dict, pick out "text", otherwise assume it's the raw string
     return result["text"] if isinstance(result, dict) else result
 
 def get_tavily_results(
@@ -64,7 +61,7 @@ def get_tavily_results(
     """
     Fetch Tavily news → extract raw → LLM-clean → return (raw_list, cleaned_list).
     """
-    # 1) search
+    # search
     query = f"latest news about tennis player {player_name}"
     search = tavily.search(
         query=query,
@@ -78,11 +75,11 @@ def get_tavily_results(
     if not urls:
         return [], []
 
-    # 2) extract raw content
+    # extract raw content
     extract_res = tavily.extract(urls=urls)
     raw_articles = extract_res["results"]  # list of dicts (url, raw_content…)
 
-    # 3) clean in parallel
+    # clean in parallel
     delay = 60 / rpm_cap if rpm_cap else 0
     cleaned: List[str] = []
 

@@ -53,7 +53,6 @@ If no function adds value, answer directly.
 If you don’t know, say so.  If the topic is not tennis,
 explain that you’re a tennis-focused assistant."""
 
-
 TOOLS = [
     PlayerSearchTool(),
     PlayerInfoTool(),
@@ -71,19 +70,19 @@ TOOLS = [
 @lru_cache(maxsize=1)
 def get_router_agent():
     """Return a singleton LangChain agent with memory."""
-    # 1) create a single ConversationBufferMemory
+
     memory = ConversationBufferMemory(
-        memory_key="chat_history",     # this key is what your agent code will see
-        return_messages=True           # so we get full message objects
+        memory_key="chat_history",
+        return_messages=True
     )
 
-    # 2) pass it into initialize_agent
+    # pass it into initialize_agent
     agent = initialize_agent(
         tools=TOOLS,
         llm=_build_router_llm(),
         agent=AgentType.OPENAI_FUNCTIONS,
         verbose=True,
-        memory=memory,                 # ← enable memory here
+        memory=memory,
         system_message=SYSTEM_PROMPT,
     )
     return agent
