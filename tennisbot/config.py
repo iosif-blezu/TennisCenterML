@@ -54,10 +54,6 @@ class Settings(BaseSettings):
         "live":           60,          # 1 minute
     }
 
-    # Evaluation / Deepeval
-    EVAL_RUBRIC_THRESHOLD: float = 0.7
-    DEEPEVAL_LOCAL_MODEL: str = Field("phi-4@q8_0", description="Model for GEval judge")
-    DEEPEVAL_BASE_URL: AnyHttpUrl | None = None
 
     # Misc
     LANGSMITH_PROJECT: str | None = None
