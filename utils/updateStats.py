@@ -1,6 +1,7 @@
 # updateStats.py
 import numpy as np
 from collections import defaultdict, deque
+import json, hashlib
 
 
 # --- Define factory functions at the top level ---
@@ -239,6 +240,10 @@ def getStats(player1, player2, match, prev_stats):
             mean_p2_stat = mean(p2_stat_hist[-k_val:]) if len(p2_stat_hist) >= k_val else mean(p2_stat_hist)
 
             output[f"{stat_name.upper()}_LAST_{k_val}_DIFF"] = mean_p1_stat - mean_p2_stat
+
+    feat_json = json.dumps(dict(sorted(output.items())), sort_keys=True)
+    print("HASH:", hashlib.md5(feat_json.encode()).hexdigest())
+    print(json.loads(feat_json))  # optional, verbose
 
     return output
 
