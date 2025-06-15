@@ -58,9 +58,6 @@ def get_tavily_results(
     max_workers: int = 6,        # parallel LLM clean jobs
     rpm_cap: int = 80,           # OpenAI requests/min cap
 ) -> Tuple[List[dict], List[str]]:
-    """
-    Fetch Tavily news → extract raw → LLM-clean → return (raw_list, cleaned_list).
-    """
     # search
     query = f"latest news about tennis player {player_name}"
     search = tavily.search(

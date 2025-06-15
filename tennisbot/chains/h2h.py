@@ -15,7 +15,6 @@ from tennisbot.config import get_settings
 from tennisbot.tools.player_search import PlayerSearchTool
 from tennisbot.chains.prompt_judge import PromptJudgeTool
 
-# Configure logging
 logger = logging.getLogger(__name__)
 
 load_dotenv()
@@ -107,7 +106,7 @@ class H2HTool(BaseTool):
     ) -> str:
         logger.info("H2HTool called: p1_id=%s p2_id=%s p1=%s p2=%s surface=%s", p1_id, p2_id, player1_name, player2_name, surface)
 
-        # Resolve fuzzy names → IDs
+        # Resolve fuzzy names to IDs
         if (p1_id is None or p2_id is None) and player1_name and player2_name:
             search = PlayerSearchTool()
             p1_id = p1_id or search.invoke({"query": player1_name})["player_id"]
@@ -129,13 +128,12 @@ class H2HTool(BaseTool):
         raw_stats = _summary_surface(h2h, p1_name, p2_name, surface) if surface else _summary_all(h2h, p1_name, p2_name)
         print(f"[H2HTool] RAW STATS:\n{raw_stats}\n")
 
-        # Generate prompt variants & choose best
+        # Generate prompt variants and choose best
         best_prompt_raw = PromptJudgeTool().invoke({"task": raw_stats, "n": 5})
         best_prompt = best_prompt_raw.content if hasattr(best_prompt_raw, "content") else str(best_prompt_raw)
         best_prompt = best_prompt.strip()
         print(f"[H2HTool] CHOSEN PROMPT:\n{best_prompt}\n")
 
-        # Escape { } so PromptTemplate doesn't treat them as variables
         safe_prompt = best_prompt.replace("{", "{{").replace("}", "}}")
         template_text = f"{safe_prompt}\n\nRAW:\n{{stats}}\n\nCOMMENTATOR:"
         custom_template = PromptTemplate.from_template(template_text)

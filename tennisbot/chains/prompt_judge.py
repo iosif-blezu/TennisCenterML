@@ -1,8 +1,3 @@
-"""PromptJudgeTool — generate N prompt variants and pick the best one via an LLM judge.
-Fixes:
-• Safely read `.content` from ChatMessage objects instead of `str()` so we only keep raw text.
-• Robust candidate extraction and judge‑selection parsing.
-"""
 from __future__ import annotations
 
 import logging
@@ -117,7 +112,6 @@ class PromptJudgeTool(BaseTool):
         logger.debug("Judge raw output: %s", judge_text)
 
         first_line = judge_text.strip().splitlines()[0] if judge_text else ""
-        # Expected format: "X. best‑prompt" or "X) best‑prompt"
         if first_line and (". " in first_line or ") " in first_line):
             selected = first_line.split(". ", 1)[1] if ". " in first_line else first_line.split(") ", 1)[1]
             logger.info("Selected prompt: %s", selected)

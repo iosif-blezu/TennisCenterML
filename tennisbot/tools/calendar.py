@@ -19,9 +19,9 @@ print(f"[CalendarTool] Cache name: {cache.cache_name}.sqlite")
 print(f"[CalendarTool] TTL (seconds): {cfg.CACHE_TTL['calendar']}")
 
 class _Input(TypedDict, total=False):
-    month: int     # default current month
-    year: int      # default current year
-    day: int       # optional, returns only that day
+    month: int # default current month
+    year: int # default current year
+    day: int # optional, returns only that day
 
 class _Day(TypedDict):
     date: str

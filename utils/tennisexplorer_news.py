@@ -1,4 +1,3 @@
-# utils/tennisexplorer_news.py
 import re, requests, bs4 as bs
 from urllib.parse import urljoin
 
@@ -23,15 +22,13 @@ def _parse_page(html: str):
     current_bucket = None
     out = []
     for ln in lines:
-        # bucket heading?
         if ln.startswith("In the last") or ln in ("Today", "Yesterday"):
             current_bucket = ln
             continue
-        # headline lines look like:  "19:21 French Open … (BBC)"
+
         m = re.match(r"^\d\d:\d\d\s+(.*?)\s+\((.+?)\)$", ln)
         if m:
             title = m.group(1).strip()
-            # need link – fish it from original soup:
             a_tag = raw.find("a", string=re.compile(re.escape(title)))
             if a_tag and a_tag.get("href"):
                 url = a_tag["href"]
@@ -42,8 +39,8 @@ def _parse_page(html: str):
 
 def scrape_latest_news(pages: int = 1):
     """
-    Scrape *pages* paginated pages (1–5) and return a flat list
-    [ {bucket,title,url}, … ] newest → oldest.
+    Scrape pages paginated pages (1–5) and return a flat list
+    [ {bucket,title,url}, … ] newest to oldest.
     """
     pages = max(1, min(pages, 5))
     articles = []

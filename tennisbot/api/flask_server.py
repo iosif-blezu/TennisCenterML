@@ -11,8 +11,8 @@ from bs4 import BeautifulSoup, Tag
 
 
 
-RPM_CAP = 80          # ≤ OpenAI requests per minute
-MAX_WORKERS = 6       # parallel cleaner threads
+RPM_CAP = 80 # requests per minute, to avoid hitting the API too hard
+MAX_WORKERS = 6 # parallel cleaner threads
 
 ENV_PATH = os.path.join(os.path.dirname(__file__), "..", ".env")
 
@@ -29,7 +29,6 @@ from flask import Flask, request, jsonify
 from tennisbot.agent.router import get_router_agent
 from tennisbot.config import get_settings
 from utils.head_to_head import head_to_head, _dataset
-from utils.getTavilyData import news_for_player      # path to the helper module you showed
 
 
 app = Flask(__name__)
@@ -37,16 +36,13 @@ CORS(app, origins=["http://localhost:3001", "http://localhost:3000"])
 
 print("FLASK_SERVER: Loading settings…")
 cfg = get_settings()
-# ... (rest of your settings print statements) ...
 
 print("FLASK_SERVER: Instantiating router agent…")
 agent = get_router_agent()
 print("FLASK_SERVER: Agent ready.")
 
-# --- Additions for ELO Stats ---
 _prev_stats_data = None
-PREV_STATS_FILE_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "data",
-                                    "prev_stats.json")  # <-- Changed to .json
+PREV_STATS_FILE_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "data", "prev_stats.json")
 
 
 def parse_str_tuple_key(key_str):
@@ -118,41 +114,30 @@ def elo_history_handler():
         return jsonify({"error": "player_id query parameter is required."}), 400
 
     try:
-        # Player IDs in the JSON are strings because all keys are strings if they were ints
-        # However, if the player_id itself is a key in a sub-dictionary,
-        # like elo_history_players[player_id], it might have been an int in Python
-        # and then converted to string by the outer dict key conversion.
-        # For consistency, we'll expect the player_id query param as a string,
-        # and use it as a string to look up in our loaded JSON (which is now dicts).
-        player_id_key = player_id_str  # Use as string for dictionary lookup
-        int(player_id_str)  # Validate it can be an int, but use string key
+        player_id_key = player_id_str
+        int(player_id_str)
     except ValueError:
         return jsonify({"error": "player_id must be an integer string."}), 400
 
-    # Data is already in list/dict format from json.load()
     elo_history_all_players = stats_data.get("elo_history_players", {})
     surface_elo_history_all_players = stats_data.get("elo_surface_history_players", {})
 
-    # Player IDs will be strings as keys in these dictionaries after JSON load
     player_general_elo_history = elo_history_all_players.get(player_id_key, [])
 
     player_surface_elo_data = {}
-    # Surface names (e.g., "Hard", "Clay") are keys at the first level of surface_elo_history_all_players
     for surface, players_on_surface in surface_elo_history_all_players.items():
-        # player_id_key is used here as well
         history = players_on_surface.get(player_id_key, [])
         if history:
-            player_surface_elo_data[surface] = history  # Already a list
+            player_surface_elo_data[surface] = history
 
     if not player_general_elo_history and not player_surface_elo_data:
         return jsonify({"error": f"No ELO history found for player_id {player_id_key}."}), 404
 
     return jsonify({
-        "player_id": player_id_key,  # Return the ID as received (string)
+        "player_id": player_id_key,
         "general_elo": player_general_elo_history,
         "surface_elo": player_surface_elo_data
     })
-
 
 @app.route("/stats/head_to_head", methods=["GET"])
 def head_to_head_handler():
@@ -176,14 +161,12 @@ def player_stats_handler():
     if not pid or not pid.isdigit():
         return jsonify({"error": "player_id query parameter (integer) is required."}), 400
 
-    # ─── Raw data pulled by STRING key ────────────────────────────────
     last_k            = list(stats.get("last_k_matches",       {}).get(pid, []))
     lk_stats          = stats.get   ("last_k_matches_stats", {}).get(pid, {})
     elo_players       = stats.get   ("elo_players",           {})
     elo_surfaces      = stats.get   ("elo_surface_players",  {})
     elo_grad_players  = stats.get   ("elo_grad_players",     {})
 
-    # ─── 1) Career & recent win‐rates ─────────────────────────────────
     def rate(seq, k=None):
         if not seq: return None
         s = seq[-k:] if (k and len(seq)>=k) else seq
@@ -191,7 +174,6 @@ def player_stats_handler():
     winrates_last = {f"{k}": rate(last_k, k) for k in (5, 10, 20, 50, 100)}
     career_wr     = rate(last_k)
 
-    # ─── 2) Streaks ───────────────────────────────────────────────────
     def longest_streak(seq):
         best = cur = 0
         for x in seq:
@@ -207,7 +189,6 @@ def player_stats_handler():
         else:    break
     longest_wr_streak = longest_streak(last_k)
 
-    # ─── 3) ELO & trend slopes ───────────────────────────────────────
     current_elo = elo_players.get(pid, 1500)
     elo_by_surface = {
         surface: d.get(pid, 1500)
@@ -223,13 +204,11 @@ def player_stats_handler():
     slope_20 = elo_slope(elo_hist, 20)
     slope_50 = elo_slope(elo_hist, 50)
 
-    # ─── 4) Career averages of all tracked stats ─────────────────────
     career_avg = {
         metric: (sum(vals)/len(vals)) if vals else None
         for metric, vals in lk_stats.items()
     }
 
-    # ─── Assemble response ────────────────────────────────────────────
     resp = {
         "player_id":            pid,
         "total_matches":        len(last_k),
@@ -273,24 +252,21 @@ def _compute_surface_stats(df_surf, pid):
     stat_bkt  = {m: [] for m in ("ace", "df", "1stIn", "1stWon", "2ndWon", "bpSaved")}
 
     for _, row in df.iterrows():
-        # ---------------- winner / loser ----------------
         res, p1, p2 = row["RESULT"], row["p1_id"], row["p2_id"]
 
         if isinstance(res, (int, float)):
-            #   * If RESULT is 1 / 0  (1 → p1 win, 0 → p2 win)
             if res in (0, 1) and ((res == 1 and p1 == pid) or (res == 0 and p2 == pid)):
                 wins.append(1)
-            elif res == pid:        # RESULT stores the winner’s id
+            elif res == pid:
                 wins.append(1)
             else:
                 wins.append(0)
-        else:  # string “Player 1” / “Player 2”
+        else:
             if (res == "Player 1" and p1 == pid) or (res == "Player 2" and p2 == pid):
                 wins.append(1)
             else:
                 wins.append(0)
 
-        # ---------------- per-match % stats -------------
         pref = "p1_" if p1 == pid else "p2_"
 
         svpt      = row[f"{pref}svpt"]     or 0
@@ -302,7 +278,6 @@ def _compute_surface_stats(df_surf, pid):
         bp_saved  = row[f"{pref}bpSaved"]  or 0
         bp_faced  = row[f"{pref}bpFaced"]  or 0
 
-        # Guard svpt == 0 etc.
         if svpt:
             stat_bkt["ace"].append(     100 * ace      / svpt)
             stat_bkt["df"].append(      100 * dfault   / svpt)
@@ -325,7 +300,6 @@ def _compute_surface_stats(df_surf, pid):
         else:
             stat_bkt["bpSaved"].append(0)
 
-    # ---------------- roll-ups --------------------------
     def rate(seq, k=None):
         if not seq:
             return None
@@ -398,18 +372,15 @@ def tennisexplorer_news_handler():
         if not center:
             continue
 
-        # for each <b> heading (the time-bucket)
         for header in center.find_all("b"):
             category = header.get_text(strip=True)
             items = []
 
-            # walk siblings until the next <b> or end
             for sib in header.next_siblings:
                 if isinstance(sib, Tag) and sib.name == "b":
                     break
                 if isinstance(sib, Tag) and sib.name == "a":
                     href = sib["href"]
-                    # TennisExplorer wraps external links in /redirect/?url=...
                     if href.startswith("/redirect/"):
                         qs = urllib.parse.urlparse(href).query
                         actual = urllib.parse.parse_qs(qs).get("url", [""])[0]
@@ -418,7 +389,6 @@ def tennisexplorer_news_handler():
                     title = sib.get_text(strip=True)
                     items.append({"title": title, "url": actual})
 
-            # only add non-empty buckets
             if items:
                 buckets.setdefault(category, []).extend(items)
 
@@ -426,14 +396,12 @@ def tennisexplorer_news_handler():
 
 @app.route("/predict", methods=["GET"])
 def predict_handler():
-    # Parse and validate required IDs
     try:
         p1 = int(request.args.get("player1_id"))
         p2 = int(request.args.get("player2_id"))
     except (TypeError, ValueError):
         return jsonify({"error": "player1_id and player2_id are required integers"}), 400
 
-    # Optional params with defaults
     surface = request.args.get("surface", "Hard")
     try:
         best_of   = int(request.args.get("best_of", 3))
@@ -441,7 +409,6 @@ def predict_handler():
     except ValueError:
         return jsonify({"error": "best_of and draw_size must be integers"}), 400
 
-    # Delegate all logic to the utility
     result = predict_between_two_players(
         player1_id=p1,
         player2_id=p2,

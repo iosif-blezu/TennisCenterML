@@ -5,9 +5,7 @@ import pandas as pd
 from functools import lru_cache
 from typing import Dict, Any
 
-# --------------------------------------------------------------------------- #
-# 1.  ONE-TIME DATA LOAD (cached with lru_cache)                               #
-# --------------------------------------------------------------------------- #
+
 DATA_PATH = os.path.join(
     os.path.dirname(__file__),
     "..", "data", "cleanedDataset.csv"
@@ -15,14 +13,12 @@ DATA_PATH = os.path.join(
 
 @lru_cache(maxsize=1)
 def _dataset() -> pd.DataFrame:
-    """Read cleanedDataset.csv once and keep it in memory."""
+    # Read cleanedDataset.csv once and keep it in memory.
     print(f"HEAD_TO_HEAD: loading {DATA_PATH}…")
     return pd.read_csv(DATA_PATH)
 
 
-# --------------------------------------------------------------------------- #
-# 2.  PUBLIC API: head_to_head                                                #
-# --------------------------------------------------------------------------- #
+
 def head_to_head(player1_id: int, player2_id: int) -> Dict[str, Any]:
     """
     Return every match between the two players plus a win tally.
@@ -60,7 +56,7 @@ def head_to_head(player1_id: int, player2_id: int) -> Dict[str, Any]:
 
     result_col = matches["RESULT"]
 
-    # Case A: numeric 0/1 → 1 means player1 won, 0 means player2 won
+    # Case A: numeric 0/1 -> 1 means player1 won, 0 means player2 won
     if pd.api.types.is_numeric_dtype(result_col) and set(result_col.dropna().unique()) <= {0, 1}:
         wins[str(player1_id)] = int((result_col == 1).sum())
         wins[str(player2_id)] = int((result_col == 0).sum())

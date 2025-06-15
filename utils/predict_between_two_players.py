@@ -1,10 +1,3 @@
-"""
-Utility: predict head-to-head outcome with the XGBoost model
------------------------------------------------------------
-Provides two functions:
-  - `predict_match(...)`         → human-readable string
-  - `predict_between_two_players(...)` → JSON-serializable dict with percentages & IDs
-"""
 from __future__ import annotations
 
 import datetime as _dt
@@ -23,9 +16,7 @@ from xgboost import XGBClassifier
 from tennisbot.config import get_settings
 from utils.updateStats import createStats, updateStats, getStats
 
-# ────────────────────────────────────────────────────────────────────
-# Configuration
-# ────────────────────────────────────────────────────────────────────
+
 cfg = get_settings()
 API_BASE = "http://localhost:5000/api/tennis"
 RANKINGS_ENDPOINT = f"{API_BASE}/rankings/atp/db?limit=500&page=1"
@@ -37,9 +28,7 @@ MODEL_PATH = PROJECT_ROOT / "models" / "xgb_model.json"
 STATS_CACHE_PATH = Path(CLEAN_DATA_PATH).parent / "stats_cache.pkl"
 CACHE_TTL = timedelta(days=1)
 
-# ────────────────────────────────────────────────────────────────────
-# Helpers
-# ────────────────────────────────────────────────────────────────────
+
 def _age_from_iso(birth_iso: str) -> int:
     try:
         b = _dt.datetime.fromisoformat(birth_iso.replace("Z", ""))
@@ -103,9 +92,6 @@ def _base_stats() -> dict:
         pass
     return stats
 
-# ────────────────────────────────────────────────────────────────────
-# Public API
-# ────────────────────────────────────────────────────────────────────
 def predict_match(
     player1_id: int,
     player2_id: int,
@@ -114,7 +100,7 @@ def predict_match(
     best_of: int = 3,
     draw_size: int = 128,
 ) -> str:
-    """Return human-readable prediction line."""
+    # Return human-readable prediction line.
     p1 = _fetch_player(player1_id)
     p2 = _fetch_player(player2_id)
     meta = {"BEST_OF": best_of, "DRAW_SIZE": draw_size, "SURFACE": surface}
@@ -136,7 +122,7 @@ def predict_between_two_players(
     best_of: int = 3,
     draw_size: int = 128,
 ) -> dict:
-    """Return structured dict with percentages and winner metadata."""
+    # Return structured dict with percentages and winner metadata.
     p1 = _fetch_player(player1_id)
     print(p1)
     p2 = _fetch_player(player2_id)

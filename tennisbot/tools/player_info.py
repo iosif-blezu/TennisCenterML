@@ -20,7 +20,7 @@ class _InputSchema(TypedDict):
     player_id: int
 
 class PlayerInfoTool(BaseTool):
-    """Combine /player and /player/rapid endpoints into one JSON."""
+    # Combine /player and /player/rapid endpoints into one JSON.
 
     name: str = "player_info"
     description: str = (

@@ -130,7 +130,7 @@ class PredictionTool(BaseTool):
         )
         tt_logger.debug("Received raw prediction: %s", raw_pred)
 
-        # Extract numeric winner & confidence
+        # Extract numeric winner and confidence
         winner, conf = _parse_raw_pred(raw_pred)
 
         # Ask LLM for a short rationale

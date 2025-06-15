@@ -23,7 +23,6 @@ def nested_deque_defaultdict_factory():
 
 def createStats():
     # import numpy as np # Already imported at top
-    # from collections import defaultdict, deque # Already imported at top
 
     prev_stats = {}
 
@@ -40,7 +39,6 @@ def createStats():
     # If h2h_surface keys are simple (e.g. (w_id,l_id) after surface key), int is fine.
     prev_stats["h2h_surface"] = defaultdict(nested_int_defaultdict_factory)
 
-    # --- For full ELO history tracking ---
     prev_stats["elo_history_players"] = defaultdict(deque_factory)  # Uses top-level deque_factory
     prev_stats["elo_surface_history_players"] = defaultdict(nested_deque_defaultdict_factory)  # Uses top-level factory
 
@@ -54,17 +52,10 @@ def createStats():
     return prev_stats
 
 
-# ... (rest of your updateStats.py: updateStats function, getStats function) ...
 
-# The updateStats and getStats functions remain the same as in the previous correct version.
-# Just ensure the imports of `mean` and `getWinnerLoserIDS` from `utils.common` are correct.
-
-# (The rest of updateStats and getStats functions as provided in the previous correct answer)
-# ... (Make sure to copy the full correct versions of updateStats and getStats here) ...
 def updateStats(match, prev_stats):
-    from utils.common import mean, getWinnerLoserIDS  # Assuming these are in utils.common
-    import numpy as np
-    from collections import deque  # Ensure deque is available if not already
+    from utils.common import getWinnerLoserIDS
+
 
     # Get Winner and Loser ID'S
     p1_id, p2_id, surface, result = match.p1_id, match.p2_id, match.surface, match.RESULT
@@ -98,7 +89,7 @@ def updateStats(match, prev_stats):
     prev_stats["elo_surface_players"][surface][w_id] = elo_surface_w_after
     prev_stats["elo_surface_players"][surface][l_id] = elo_surface_l_after
 
-    # --- Store ELO history (after update) ---
+    #Store ELO history (after update)
     prev_stats["elo_history_players"][w_id].append(elo_w_after)
     prev_stats["elo_history_players"][l_id].append(elo_l_after)
 
@@ -114,7 +105,7 @@ def updateStats(match, prev_stats):
             prev_stats["elo_surface_history_players"][s_other][w_id].append(current_elo_w_other_surface)
             current_elo_l_other_surface = prev_stats["elo_surface_players"][s_other].get(l_id, 1500)
             prev_stats["elo_surface_history_players"][s_other][l_id].append(current_elo_l_other_surface)
-    # --- End of ELO history update ---
+    # End of ELO history update
 
     prev_stats["elo_grad_players"][w_id].append(elo_w_after)
     prev_stats["elo_grad_players"][l_id].append(elo_l_after)
